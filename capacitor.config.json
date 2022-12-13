@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "ccr-deck",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

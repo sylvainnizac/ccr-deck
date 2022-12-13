@@ -1,0 +1,7 @@
+{
+  "name": "ccr-deck",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
