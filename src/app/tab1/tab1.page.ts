@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CheckboxChangeEventDetail } from '@ionic/core';
+import { ProgramsService } from '../service/programs.service';
 
 type Action = {
   name: string;
@@ -71,10 +73,12 @@ export class Tab1Page {
   max_program: number = 0
   current_program: number = 0
 
-  constructor() {
+  constructor(private programService: ProgramsService) {
     this.data = this.getData()
     this.appareil = this.getAppareil()
-    this.max_program = this.appareil.indice
+    this.programService.setMaxProgram(this.appareil.indice)
+    this.programService.max_program.subscribe(data => this.max_program = data)
+    this.programService.current_program.subscribe(data => this.current_program = data)
   }
 
   getData() {
@@ -87,11 +91,13 @@ export class Tab1Page {
     var programs_list: Program[];
     programs_list = [
       {"active": false, "installed": false, "name": "navigateur", "page": 247, "description": "temps de recherche matriciel / 2"},
+      {"active": false, "installed": false, "name": "édition", "page": 247, "description": "TdD + 2 pour \"Editer un fichier\""},
     ];
 
     var hacking_programs_list: Program[];
     hacking_programs_list = [
-      {"active": false, "installed": false, "name": "exploitation", "page": 247, "description": "Corruption+2 pour \"hacker à la volée\""},
+      {"active": false, "installed": false, "name": "exploitation", "page": 247, "description": "Corruption + 2 pour \"hacker à la volée\""},
+      {"active": false, "installed": false, "name": "furtivité", "page": 247, "description": "Corruption + 1"},
     ];
 
     var recovered_data: Data;

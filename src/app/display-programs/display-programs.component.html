@@ -2,10 +2,10 @@
   <ion-grid>
     <ion-row>
       <ion-col>
-          <ion-checkbox [(ngModel)]="program.active"  [disabled]="!program.installed"></ion-checkbox>
+          <ion-checkbox [(ngModel)]="program.active"  [disabled]="!program.installed || (current_program >= max_program && !program.active)" (ionChange)="setActive($event)"></ion-checkbox>
       </ion-col>
       <ion-col>
-        <ion-checkbox [(ngModel)]="program.installed"></ion-checkbox>
+        <ion-checkbox [(ngModel)]="program.installed" [disabled]="program.active"></ion-checkbox>
       </ion-col>
       <ion-col>{{program.name}}</ion-col>
       <ion-col>{{program.page}}</ion-col>
