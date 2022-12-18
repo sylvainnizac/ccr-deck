@@ -2,7 +2,7 @@
   <ion-grid>
     <ion-row>
       <ion-col>
-          <ion-checkbox [(ngModel)]="program.active"></ion-checkbox>
+          <ion-checkbox [(ngModel)]="program.active"  [disabled]="!program.installed"></ion-checkbox>
       </ion-col>
       <ion-col>
         <ion-checkbox [(ngModel)]="program.installed"></ion-checkbox>
