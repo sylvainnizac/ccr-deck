@@ -9,9 +9,73 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large">Deck</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-row>
+          <ion-list lines="none" class="width_100">
+            <ion-item>
+              <ion-grid>
+                <ion-row>
+                  <ion-col>{{appareil.name}}</ion-col>
+                  <ion-col>indice: {{appareil.indice}}</ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-item>
+          </ion-list>
+        </ion-row>
+        <ion-row>
+          <ion-list class="width_100">
+            <ion-list-header>
+              <ion-label *ngFor="let head of data.actionsHeaders">{{head}}</ion-label>
+            </ion-list-header>
+            <ion-item *ngFor="let action of data.actions">
+              <ion-grid>
+                <ion-row>
+                  <ion-col>{{action.name}}</ion-col>
+                  <ion-col>{{action.mark}}</ion-col>
+                  <ion-col>{{action.test}}</ion-col>
+                  <ion-col>{{action.limite}}</ion-col>
+                  <ion-col>{{action.type}}</ion-col>
+                  <ion-col>{{action.page}}</ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-item>
+          </ion-list>
+        </ion-row>
+      </ion-col>
+      <ion-col>
+        <ion-row>
+          <ion-list class="width_100">
+            <ion-list-header>
+              <ion-label *ngFor="let head of data.programsHeaders">{{head}}</ion-label>
+            </ion-list-header>
+            <ion-item *ngFor="let program of data.programs">
+              <ion-grid>
+                <ion-row>
+                  <ion-col>
+                      <ion-checkbox [(ngModel)]="program.active"></ion-checkbox>
+                  </ion-col>
+                  <ion-col>
+                    <ion-checkbox [(ngModel)]="program.installed"></ion-checkbox>
+                  </ion-col>
+                  <ion-col>{{program.name}}</ion-col>
+                  <ion-col>{{program.page}}</ion-col>
+                  <ion-col>{{program.description}}</ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-item>
+          </ion-list>
+        </ion-row>
+        <ion-row>
+          temp
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
 </ion-content>
