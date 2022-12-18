@@ -50,17 +50,13 @@ export class Tab1Page {
 
   data: Data
   appareil: Appareil
+  max_program: number = 0
+  current_program: number = 0
 
   constructor() {
     this.data = this.getData()
-    this.appareil = {
-      "name": "Hermès Chariot",
-      "indice": 2,
-      "TdD": 5,
-      "firewall": 4,
-      "attaque": 4,
-      "corruption": 2,
-    }
+    this.appareil = this.getAppareil()
+    this.max_program = this.appareil.indice
   }
 
   getData() {
@@ -80,5 +76,18 @@ export class Tab1Page {
     recovered_data = new Data(actions_list, programs_list)
     return recovered_data
   }
+
+  getAppareil() {
+    let recovered_appareil: Appareil = {
+      "name": "Hermès Chariot",
+      "indice": 2,
+      "TdD": 5,
+      "firewall": 4,
+      "attaque": 4,
+      "corruption": 2,
+    }
+    return recovered_appareil
+  }
+
 
 }
