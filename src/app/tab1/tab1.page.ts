@@ -17,13 +17,30 @@ type Program = {
   description: string;
 }
 
-type Appareil = {
+interface BaseAppareil {
   name: string;
   indice: number;
   TdD: number;
   firewall: number;
   attaque: number;
   corruption: number;
+  condition: number;
+}
+
+class Appareil implements BaseAppareil {
+
+  condition: number
+
+  constructor (
+    public name: string,
+    public indice: number,
+    public TdD: number,
+    public firewall: number,
+    public attaque: number,
+    public corruption: number
+    ) {
+      this.condition = 8 + (indice/2)
+  }
 }
 
 interface DataStruct {
@@ -63,7 +80,7 @@ export class Tab1Page {
     var actions_list: Action[];
     actions_list = [
       {"name": "hacker à la volée","mark": "aucune","test": "Hacking+LOG vs Firewall+INT","limite": "Corruption","type": "Complexe","page": 666},
-      {"name": "brouiller les signaux","mark": "4","test": "G. Elec+LOG","limite": "Attaquue","type": "Complexe","page": 239}
+      {"name": "brouiller les signaux","mark": "4","test": "G. Elec+LOG","limite": "Attaque","type": "Complexe","page": 239}
     ];
 
     var programs_list: Program[];
@@ -78,16 +95,9 @@ export class Tab1Page {
   }
 
   getAppareil() {
-    let recovered_appareil: Appareil = {
-      "name": "Hermès Chariot",
-      "indice": 2,
-      "TdD": 5,
-      "firewall": 4,
-      "attaque": 4,
-      "corruption": 2,
-    }
+    let recovered_appareil: Appareil
+    recovered_appareil = new Appareil("Hermès Chariot", 2, 5, 4, 4, 2)
     return recovered_appareil
   }
-
 
 }
