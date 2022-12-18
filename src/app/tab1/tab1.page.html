@@ -61,21 +61,11 @@
             <ion-list-header>
               <ion-label *ngFor="let head of data.programsHeaders">{{head}}</ion-label>
             </ion-list-header>
-            <ion-item *ngFor="let program of data.programs">
-              <ion-grid>
-                <ion-row>
-                  <ion-col>
-                      <ion-checkbox [(ngModel)]="program.active"></ion-checkbox>
-                  </ion-col>
-                  <ion-col>
-                    <ion-checkbox [(ngModel)]="program.installed"></ion-checkbox>
-                  </ion-col>
-                  <ion-col>{{program.name}}</ion-col>
-                  <ion-col>{{program.page}}</ion-col>
-                  <ion-col>{{program.description}}</ion-col>
-                </ion-row>
-              </ion-grid>
-            </ion-item>
+            <app-display-programs [programs]="data.programs"></app-display-programs>
+            <ion-list-header>
+              <ion-label>Programmes de hacking</ion-label>
+            </ion-list-header>
+            <app-display-programs [programs]="data.hacking_programs"></app-display-programs>
           </ion-list>
         </ion-row>
         <ion-row>

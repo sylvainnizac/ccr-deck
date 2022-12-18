@@ -48,13 +48,14 @@ interface DataStruct {
   readonly programsHeaders: String[];
   actions?: Action[];
   programs?: Program[];
+  hacking_programs?: Program[];
 }
 
 class Data implements DataStruct {
   actionsHeaders = ["name", "mark", "test", "limite", "type", "page"]
   programsHeaders = ["active", "installed", "name", "page", "description"]
 
-  constructor (public actions?: Action[], public programs?: Program[]) {
+  constructor (public actions?: Action[], public programs?: Program[], public hacking_programs?: Program[]) {
   }
 }
 
@@ -86,11 +87,15 @@ export class Tab1Page {
     var programs_list: Program[];
     programs_list = [
       {"active": false, "installed": false, "name": "navigateur", "page": 247, "description": "temps de recherche matriciel / 2"},
+    ];
+
+    var hacking_programs_list: Program[];
+    hacking_programs_list = [
       {"active": false, "installed": false, "name": "exploitation", "page": 247, "description": "Corruption+2 pour \"hacker à la volée\""},
     ];
 
     var recovered_data: Data;
-    recovered_data = new Data(actions_list, programs_list)
+    recovered_data = new Data(actions_list, programs_list, hacking_programs_list)
     return recovered_data
   }
 

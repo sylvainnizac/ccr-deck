@@ -1,0 +1,15 @@
+<ion-item *ngFor="let program of programs">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+          <ion-checkbox [(ngModel)]="program.active"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        <ion-checkbox [(ngModel)]="program.installed"></ion-checkbox>
+      </ion-col>
+      <ion-col>{{program.name}}</ion-col>
+      <ion-col>{{program.page}}</ion-col>
+      <ion-col>{{program.description}}</ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-item>
