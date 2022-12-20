@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Deck
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -58,14 +58,8 @@
       <ion-col>
         <ion-row>
           <ion-list class="width_100">
-            <ion-list-header>
-              <ion-label *ngFor="let head of data.programsHeaders">{{head}}</ion-label>
-            </ion-list-header>
-            <app-display-programs [programs]="data.programs"></app-display-programs>
-            <ion-list-header>
-              <ion-label>Programmes de hacking</ion-label>
-            </ion-list-header>
-            <app-display-programs [programs]="data.hacking_programs"></app-display-programs>
+            <app-display-programs [programs]="data.programs" [headers]="data.programsHeaders"></app-display-programs>
+            <app-display-programs [programs]="data.hacking_programs" title="Programmes de hacking"></app-display-programs>
           </ion-list>
         </ion-row>
         <ion-row>

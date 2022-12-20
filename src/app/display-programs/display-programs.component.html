@@ -1,3 +1,9 @@
+<ion-list-header *ngIf="headers">
+  <ion-label *ngFor="let head of headers">{{head}}</ion-label>
+</ion-list-header>
+<ion-list-header *ngIf="title">
+  <ion-label>{{title}}</ion-label>
+</ion-list-header>
 <ion-item *ngFor="let program of programs">
   <ion-grid>
     <ion-row>

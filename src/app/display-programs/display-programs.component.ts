@@ -17,6 +17,8 @@ type Program = {
 export class DisplayProgramsComponent implements OnInit {
 
   @Input() programs?: Program[];
+  @Input() headers?: string[];
+  @Input() title?: string;
   max_program: number = 0;
   current_program: number = 0;
 
