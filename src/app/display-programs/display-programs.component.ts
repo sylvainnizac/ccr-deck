@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CheckboxChangeEventDetail, CheckboxCustomEvent } from '@ionic/angular';
-import { ProgramsService } from '../service/programs.service';
+import { ProgramsService } from '../services/programs.service';
 
 type Program = {
   active: boolean;

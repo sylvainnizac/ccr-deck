@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { CheckboxChangeEventDetail } from '@ionic/core';
-import { ProgramsService } from '../service/programs.service';
+import { ProgramsService } from '../services/programs.service';
 
 type Action = {
   name: string;
