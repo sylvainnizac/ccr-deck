@@ -37,21 +37,7 @@
         </ion-row>
         <ion-row>
           <ion-list class="width_100">
-            <ion-list-header>
-              <ion-label *ngFor="let head of data.actionsHeaders">{{head}}</ion-label>
-            </ion-list-header>
-            <ion-item *ngFor="let action of data.actions">
-              <ion-grid>
-                <ion-row>
-                  <ion-col>{{action.name}}</ion-col>
-                  <ion-col>{{action.mark}}</ion-col>
-                  <ion-col>{{action.test}}</ion-col>
-                  <ion-col>{{action.limite}}</ion-col>
-                  <ion-col>{{action.type}}</ion-col>
-                  <ion-col>{{action.page}}</ion-col>
-                </ion-row>
-              </ion-grid>
-            </ion-item>
+            <app-display-actions [categories]="data.categories" [headers]="data.actionsHeaders"></app-display-actions>
           </ion-list>
         </ion-row>
       </ion-col>

@@ -1,0 +1,26 @@
+<ion-accordion-group [multiple]="true">
+  <div *ngFor="let category of categories">
+    <ion-accordion value="{{category.name}}">
+      <ion-item slot="header" color="light">
+        <ion-label>{{category.name}}</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <ion-list-header>
+          <ion-label *ngFor="let head of headers">{{head}}</ion-label>
+        </ion-list-header>
+        <ion-item *ngFor="let action of category.actions" class="item-accordion" ng-show="isGroupShown(category)">
+          <ion-grid>
+            <ion-row>
+              <ion-col>{{action.name}}</ion-col>
+              <ion-col>{{action.mark}}</ion-col>
+              <ion-col>{{action.test}}</ion-col>
+              <ion-col>{{action.limite}}</ion-col>
+              <ion-col>{{action.type}}</ion-col>
+              <ion-col>{{action.page}}</ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+      </div>
+    </ion-accordion>
+  </div>
+</ion-accordion-group>

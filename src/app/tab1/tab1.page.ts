@@ -10,6 +10,12 @@ type Action = {
   page: number;
 }
 
+type Category = {
+  name: string;
+  show: boolean;
+  actions: Action[]
+}
+
 type Program = {
   active: boolean;
   installed: boolean;
@@ -47,16 +53,16 @@ class Appareil implements BaseAppareil {
 interface DataStruct {
   readonly actionsHeaders: String[];
   readonly programsHeaders: String[];
-  actions?: Action[];
+  categories?: Category[];
   programs?: Program[];
   hacking_programs?: Program[];
 }
 
 class Data implements DataStruct {
-  actionsHeaders = ["name", "mark", "test", "limite", "type", "page"]
+  actionsHeaders = ["", "mark", "test", "limite", "type", "page"]
   programsHeaders = ["active", "installed", "name", "page", "description"]
 
-  constructor (public actions?: Action[], public programs?: Program[], public hacking_programs?: Program[]) {
+  constructor (public categories?: Category[], public programs?: Program[], public hacking_programs?: Program[]) {
   }
 }
 
@@ -81,11 +87,23 @@ export class Tab1Page {
   }
 
   getData() {
-    var actions_list: Action[];
-    actions_list = [
-      {"name": "hacker à la volée","mark": "aucune","test": "Hacking+LOG vs Firewall+INT","limite": "Corruption","type": "Complexe","page": 666},
+    var actions_marks: Action[] = [
+      {"name": "hacker à la volée","mark": "aucune","test": "Hacking+LOG vs Firewall+INT","limite": "Corruption","type": "Complexe","page": 666}
+    ];
+    var category_marks: Category = {
+      name: "manipulation de marks",
+      show: true,
+      actions: actions_marks
+    };
+    var actions_divers: Action[] = [
       {"name": "brouiller les signaux","mark": "4","test": "G. Elec+LOG","limite": "Attaque","type": "Complexe","page": 239}
     ];
+    var category_divers: Category = {
+      name: "divers",
+      show: true,
+      actions: actions_divers
+    };
+    var category_list: Category[] = [category_marks, category_divers];
 
     var programs_list: Program[];
     programs_list = [
@@ -100,7 +118,7 @@ export class Tab1Page {
     ];
 
     var recovered_data: Data;
-    recovered_data = new Data(actions_list, programs_list, hacking_programs_list)
+    recovered_data = new Data(category_list, programs_list, hacking_programs_list)
     return recovered_data
   }
 
