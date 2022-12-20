@@ -1,0 +1,10 @@
+{
+    "common_programs": [
+    {"active": false, "installed": false, "name": "navigateur", "page": 247, "description": "temps de recherche matriciel / 2"},
+    {"active": false, "installed": false, "name": "édition", "page": 247, "description": "TdD + 2 pour \"Editer un fichier\""}
+  ],  
+  "hacking_programs": [
+    {"active": false, "installed": false, "name": "exploitation", "page": 247, "description": "Corruption + 2 pour \"hacker à la volée\""},
+    {"active": false, "installed": false, "name": "furtivité", "page": 247, "description": "Corruption + 1"}
+  ]
+}
