@@ -2,11 +2,11 @@ import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Tab1Page } from './tab1.page';
+import { DeckPage } from './deck.page';
 import { DisplayProgramComponentModule } from '../display-programs/display-programs.module';
 import { DisplayActionsComponentModule } from '../display-actions/display-actions.module';
 
-import { Tab1PageRoutingModule } from './tab1-routing.module';
+import { DeckPageRoutingModule } from './deck-routing.module';
 
 @NgModule({
   imports: [
@@ -15,8 +15,8 @@ import { Tab1PageRoutingModule } from './tab1-routing.module';
     DisplayProgramComponentModule,
     DisplayActionsComponentModule,
     FormsModule,
-    Tab1PageRoutingModule
+    DeckPageRoutingModule
   ],
-  declarations: [Tab1Page]
+  declarations: [DeckPage]
 })
-export class Tab1PageModule {}
+export class DeckPageModule {}
