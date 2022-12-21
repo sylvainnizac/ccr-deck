@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ProgramsService } from '../services/programs.service';
+import { DeckService } from '../services/deck.service';
 import DeckActions from '../../assets/json/deck_actions.json';
 import DeckPrograms from '../../assets/json/deck_programs.json';
 
@@ -76,14 +77,14 @@ class Data implements DataStruct {
 export class DeckPage {
 
   data: Data
-  appareil: Appareil
+  device: Appareil = new Appareil("temporary", 0, 0, 0, 0, 0)
   max_program: number = 0
   current_program: number = 0
 
-  constructor(private programService: ProgramsService) {
+  constructor(private deckService: DeckService, private programService: ProgramsService) {
     this.data = this.getData()
-    this.appareil = this.getAppareil()
-    this.programService.setMaxProgram(this.appareil.indice)
+    this.deckService.device.subscribe(data => this.device = data)
+    this.programService.setMaxProgram(this.device.indice)
     this.programService.max_program.subscribe(data => this.max_program = data)
     this.programService.current_program.subscribe(data => this.current_program = data)
   }
@@ -92,12 +93,6 @@ export class DeckPage {
     var recovered_data: Data;
     recovered_data = new Data(DeckActions, DeckPrograms["common_programs"], DeckPrograms["hacking_programs"])
     return recovered_data
-  }
-
-  getAppareil() {
-    let recovered_appareil: Appareil
-    recovered_appareil = new Appareil("Hermès Chariot", 2, 5, 4, 4, 2)
-    return recovered_appareil
   }
 
 }
