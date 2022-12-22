@@ -1,0 +1,7 @@
+{
+    "ccr" :[],
+    "deck" :[
+        {"name": "temporary", "indice":  0, "attaque":  0, "corruption":  0, "firewall":  0, "TdD":  0},
+        {"name": "Hermès Chariot", "indice":  2, "attaque":  5, "corruption":  4, "firewall":  4, "TdD":  2}
+    ]
+}

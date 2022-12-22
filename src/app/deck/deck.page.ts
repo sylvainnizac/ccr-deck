@@ -3,6 +3,8 @@ import { ProgramsService } from '../services/programs.service';
 import { DeckService } from '../services/deck.service';
 import DeckActions from '../../assets/json/deck_actions.json';
 import DeckPrograms from '../../assets/json/deck_programs.json';
+import Devices from '../../assets/json/devices.json';
+import { Appareil } from '../interfaces/deck';
 
 type Action = {
   name: string;
@@ -25,32 +27,6 @@ type Program = {
   name: string;
   page: number;
   description: string;
-}
-
-interface BaseAppareil {
-  name: string;
-  indice: number;
-  TdD: number;
-  firewall: number;
-  attaque: number;
-  corruption: number;
-  condition: number;
-}
-
-class Appareil implements BaseAppareil {
-
-  condition: number
-
-  constructor (
-    public name: string,
-    public indice: number,
-    public TdD: number,
-    public firewall: number,
-    public attaque: number,
-    public corruption: number
-    ) {
-      this.condition = 8 + (indice/2)
-  }
 }
 
 interface DataStruct {
@@ -77,22 +53,23 @@ class Data implements DataStruct {
 export class DeckPage {
 
   data: Data
-  device: Appareil = new Appareil("temporary", 0, 0, 0, 0, 0)
+  device: Appareil = new Appareil(Devices.deck[0])
   max_program: number = 0
   current_program: number = 0
 
   constructor(private deckService: DeckService, private programService: ProgramsService) {
+    this.deckService.changeBaseDevice(new Appareil(Devices.deck[1]))
+    this.deckService.displayed_device.subscribe(data => this.device = data)
+
     this.data = this.getData()
-    this.deckService.device.subscribe(data => this.device = data)
+
     this.programService.setMaxProgram(this.device.indice)
     this.programService.max_program.subscribe(data => this.max_program = data)
     this.programService.current_program.subscribe(data => this.current_program = data)
   }
 
   getData() {
-    var recovered_data: Data;
-    recovered_data = new Data(DeckActions, DeckPrograms["common_programs"], DeckPrograms["hacking_programs"])
-    return recovered_data
+    return new Data(DeckActions, DeckPrograms["common_programs"], DeckPrograms["hacking_programs"])
   }
 
 }
