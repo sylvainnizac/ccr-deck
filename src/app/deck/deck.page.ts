@@ -7,45 +7,7 @@ import DeckActions from '../../assets/json/deck_actions.json';
 import DeckPrograms from '../../assets/json/deck_programs.json';
 import Devices from '../../assets/json/devices.json';
 import { Appareil } from '../interfaces/deck';
-
-type Action = {
-  name: string;
-  mark: string;
-  test: string;
-  limite: string;
-  type: string;
-  page: number;
-}
-
-type Category = {
-  name: string;
-  show: boolean;
-  actions: Action[]
-}
-
-type Program = {
-  active: boolean;
-  installed: boolean;
-  name: string;
-  page: number;
-  description: string;
-}
-
-interface DataStruct {
-  readonly actionsHeaders: String[];
-  readonly programsHeaders: String[];
-  categories?: Category[];
-  programs?: Program[];
-  hacking_programs?: Program[];
-}
-
-class Data implements DataStruct {
-  actionsHeaders = ["", "mark", "test", "limite", "type", "page"]
-  programsHeaders = ["active", "installed", "name", "page", "description"]
-
-  constructor (public categories?: Category[], public programs?: Program[], public hacking_programs?: Program[]) {
-  }
-}
+import { Data } from '../interfaces/datastruct';
 
 @Component({
   selector: 'app-deck',

@@ -1,13 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Program } from '../interfaces/program';
 import { ProgramsService } from '../services/programs.service';
-
-type Program = {
-  active: boolean;
-  installed: boolean;
-  name: string;
-  page: number;
-  description: string;
-}
 
 @Component({
   selector: 'app-display-programs',

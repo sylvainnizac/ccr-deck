@@ -1,19 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-
-type Action = {
-  name: string;
-  mark: string;
-  test: string;
-  limite: string;
-  type: string;
-  page: number;
-}
-
-type Category = {
-  name: string;
-  show: boolean;
-  actions: Action[]
-}
+import { Category } from '../interfaces/action';
 
 @Component({
   selector: 'app-display-actions',
