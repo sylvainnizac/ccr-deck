@@ -1,23 +1,64 @@
 [
     {
-        "name": "manipulation de marks",
-        "show": true,
+        "name": "collecte d'informations",
         "actions": [
-            {"name": "hacker à la volée","mark": "aucune","test": "Hacking+LOG vs Firewall+INT","limite": "Corruption","type": "Complexe","page": 666}
+            {"name": "fureter","mark": "1","test": "G.Elec+INT vs Firewall+LOG","limite": "Corruption","type": "Complexe","page": 241},
+            {"name": "perception matricielle","mark": "aucune","test": "Informatique+INT vs Corruption+LOG","limite": "TdD","type": "Complexe","page": 242},
+            {"name": "recherche matricielle","mark": "spécial","test": "Informatique+LOG","limite": "TdD","type": "Spécial","page": 244},
+            {"name": "traquer une icône","mark": "2","test": "Informatique+INT vs Corruption+VOL","limite": "TdD","type": "Spécial","page": 244},
+            {"name": "vérifier score de surveillance","mark": "aucune","test": "G.Elec+LOG vs 6d","limite": "Corruption","type": "Simple","page": 246}
         ]
     },
     {
-        "name": "catégorie pour tester",
-        "show": true,
+        "name": "manipulation d'appareils",
         "actions": [
-            {"name": "hacker à la volée","mark": "aucune","test": "Hacking+LOG vs Firewall+INT","limite": "Corruption","type": "Complexe","page": 666}
+            {"name": "contrôler un appareil (illégal)","mark": "variable","test": "G.ELEC+LOG vs Firewall+INT","limite": "Corruption","type": "Variable","page": 239},
+            {"name": "contrôler un appareil (légal)","mark": "variable","test": "test standard de l'action","limite": "TdD","type": "Variable","page": 239},
+            {"name": "formater un appareil","mark": "3","test": "Informatique+LOG vs Firewall+VOL","limite": "Corruption","type": "Complexe","page": 241},
+            {"name": "imiter un ordre","mark": "1","test": "Hacking+INT vs Firewall+VOL","limite": "Corruption","type": "Complexe","page": 241},
+            {"name": "rebooter un appareil","mark": "3","test": "Informatique+LOG vs Firewall+VOL","limite": "TdD","type": "Complexe","page": 244}
+        ]
+    },
+    {
+        "name": "manipulation de fichiers",
+        "actions": [
+            {"name": "désamorcer une bombe matricielle","mark": "aucune","test": "Logiciel+INT vs indice x 2","limite": "Firewall","type": "Complexe","page": 240},
+            {"name": "éditer un fichier","mark": "1","test": "Informatique+LOG vs Firewall+INT","limite": "TdD","type": "Complexe","page": 240},
+            {"name": "pirater un fichier","mark": "1","test": "Hacking+LOG vs indice x 2","limite": "TdD","type": "Complexe","page": 242},
+            {"name": "poser une bombe matricielle","mark": "1","test": "Logiciel+LOG vs indice x 2","limite": "Corruption","type": "Complexe","page": 243}
+        ]
+    },
+    {
+        "name": "manipulation de marks",
+        "actions": [
+            {"name": "effacer une mark","mark": "spécial","test": "Informatique+LOG vs Firewall+VOL","limite": "Attaque","type": "Complexe","page": 240},
+            {"name": "hacker à la volée","mark": "aucune","test": "Hacking+LOG vs Firewall+INT","limite": "Corruption","type": "Complexe","page": 241},
+            {"name": "inviter au markage","mark": "4","test": "aucun","limite": "TdD","type": "Simple","page": 241},
+            {"name": "passer en force","mark": "aucune","test": "Cybercombat+LOG vs Firewall+VOL","limite": "Attaque","type": "Complexe","page": 242}
+        ]
+    },
+    {
+        "name": "combat matriciel",
+        "actions": [
+            {"name": "défense totale matricielle","mark": "4","test": "aucun","limite": "Firewall","type": "Interruption","page": 242},
+            {"name": "pic de données","mark": "aucune","test": "Cybercombat+LOG vs Firewall+INT","limite": "Attaque","type": "Complexe","page": 242},
+            {"name": "planter un programme","mark": "1","test": "Cybercombat+LOG vs Firewall+INT","limite": "Attaque","type": "Simple","page": 243}
         ]
     },
     {
         "name": "divers",
-        "show": true,
         "actions": [
-            {"name": "brouiller les signaux","mark": "4","test": "G. Elec+LOG","limite": "Attaque","type": "Complexe","page": 239}
+            {"name": "brouiller les signaux","mark": "4","test": "G.Elec+LOG","limite": "Attaque","type": "Complexe","page": 239},
+            {"name": "changer de mode d'interface","mark": "4","test": "auncun","limite": "TdD","type": "Simple","page": 239},
+            {"name": "changer son icône","mark": "4","test": "auncun","limite": "TdD","type": "Simple","page": 239},
+            {"name": "entrer dans un serveur","mark": "1","test": "auncun","limite": "TdD","type": "Complexe","page": 240},
+            {"name": "sortir d'un serveur","mark": "aucune","test": "auncun","limite": "TdD","type": "Complexe","page": 240},
+            {"name": "envoyer un message","mark": "1","test": "auncun","limite": "TdD","type": "Simple","page": 241},
+            {"name": "plonger dans un véhicule interfacé","mark": "3","test": "G.Elec+LOG vs Firewall+VOL","limite": "TdD","type": "Complexe","page": 243},
+            {"name": "reconfigurer le deck","mark": "4","test": "auncun","limite": "N/A","type": "Gratuite","page": 229},
+            {"name": "saut de grille","mark": "aucune","test": "auncun","limite": "TdD","type": "Complexe","page": 244},
+            {"name": "se cacher","mark": "aucune","test": "G.Elec+INT vs TdD+INT","limite": "Corruption","type": "Complexe","page": 244},
+            {"name": "se débrancher","mark": "4","test": "Mat.Elec+VOL vs Attaque+LOG","limite": "Firewall","type": "Simple","page": 244}
         ]
     }
 ]

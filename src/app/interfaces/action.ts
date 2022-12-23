@@ -9,6 +9,5 @@ export type Action = {
   
 export type Category = {
     name: string;
-    show: boolean;
     actions: Action[]
 }

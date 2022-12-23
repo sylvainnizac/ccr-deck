@@ -1,5 +1,15 @@
 {
-    "ccr" :[],
+    "ccr" :[
+        {"name": "temporary", "indice":  0, "attaque":  0, "corruption":  0, "firewall":  0, "TdD":  0},
+        {"name": "scratch-built junk", "indice":  1, "attaque":  0, "corruption":  0, "firewall":  2, "TdD":  3},
+        {"name": "radio shack remote controller", "indice":  2, "attaque":  0, "corruption":  0, "firewall":  3, "TdD":  3},
+        {"name": "essy motors dronemaster", "indice":  3, "attaque":  0, "corruption":  0, "firewall":  4, "TdD":  4},
+        {"name": "compuforce taskmaster", "indice":  4, "attaque":  0, "corruption":  0, "firewall":  4, "TdD":  5},
+        {"name": "maersk spider", "indice":  4, "attaque":  0, "corruption":  0, "firewall":  5, "TdD":  4},
+        {"name": "maser industrial electronics", "indice":  5, "attaque":  0, "corruption":  0, "firewall":  4, "TdD":  3},
+        {"name": "vulcan liegelord", "indice":  5, "attaque":  0, "corruption":  0, "firewall":  5, "TdD":  6},
+        {"name": "proteus poseidon", "indice":  5, "attaque":  0, "corruption":  0, "firewall":  6, "TdD":  5}
+    ],
     "deck" :[
         {"name": "temporary", "indice":  0, "attaque":  0, "corruption":  0, "firewall":  0, "TdD":  0},
         {"name": "Hermès Chariot", "indice":  2, "attaque":  5, "corruption":  4, "firewall":  4, "TdD":  2}

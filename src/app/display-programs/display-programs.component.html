@@ -7,15 +7,15 @@
 <ion-item *ngFor="let program of programs">
   <ion-grid>
     <ion-row>
-      <ion-col>
-          <ion-checkbox [(ngModel)]="program.active"  [disabled]="!program.installed || (current_program >= max_program && !program.active)" (ionChange)="setActive($event)"></ion-checkbox>
+      <ion-col size="1">
+          <ion-checkbox class="program_checkbox" [(ngModel)]="program.active"  [disabled]="!program.installed || (current_program >= max_program && !program.active)" (ionChange)="setActive($event)"></ion-checkbox>
       </ion-col>
-      <ion-col>
-        <ion-checkbox [(ngModel)]="program.installed" [disabled]="program.active"></ion-checkbox>
+      <ion-col size="1">
+        <ion-checkbox class="program_checkbox" [(ngModel)]="program.installed" [disabled]="program.active"></ion-checkbox>
       </ion-col>
-      <ion-col>{{program.name}}</ion-col>
-      <ion-col>{{program.page}}</ion-col>
-      <ion-col>{{program.description}}</ion-col>
+      <ion-col size="3" class="program_label">{{program.name}}</ion-col>
+      <ion-col size="1" class="program_page">{{program.page}}</ion-col>
+      <ion-col size="6">{{program.description}}</ion-col>
     </ion-row>
   </ion-grid>
 </ion-item>
