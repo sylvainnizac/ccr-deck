@@ -1,0 +1,57 @@
+.device{
+    border: black 1px solid;
+
+    .device_header {
+        margin-bottom: 20px;
+        border-bottom: black 1px solid;
+    }
+
+    .attributes {
+        width:100%;
+
+        .attributename {
+            padding: 10px;
+            justify-content: center;
+            display: flex;
+        }
+
+        .attributebox {
+            padding: 10px;
+            justify-content: center;
+            display: flex;
+            font-size: 25px;
+            align-items: center!important;
+
+            .attribute-custom-placeholder {
+                background: #ccc;
+                border: dotted 3px #999;
+                min-height: 30px;
+                width: 20%;
+                transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+            }
+
+            .subattributbox {
+                padding: 0;
+                justify-content: center;
+                display: flex;
+                font-size: 25px;
+            }
+
+            .variationbox {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+.cdk-drag-preview {
+box-sizing: border-box;
+border-radius: 4px;
+box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+            0 8px 10px 1px rgba(0, 0, 0, 0.14),
+            0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-animating {
+transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}

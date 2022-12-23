@@ -43,27 +43,27 @@ export class Appareil implements BaseAppareil {
         } else if (["attaque", "corruption"].includes(att1) && ["attaque", "corruption"].includes(att2) ) {
             var buff = this.attaque
             this.attaque = this.corruption
-            this.corruption == buff
+            this.corruption = buff
         } else if (["attaque", "firewall"].includes(att1) && ["attaque", "firewall"].includes(att2) ) {
             var buff = this.attaque
             this.attaque = this.firewall
-            this.firewall == buff
+            this.firewall = buff
         } else if (["attaque", "TdD"].includes(att1) && ["attaque", "TdD"].includes(att2) ) {
             var buff = this.attaque
             this.attaque = this.TdD
-            this.TdD == buff
+            this.TdD = buff
         } else if (["corruption", "firewall"].includes(att1) && ["corruption", "firewall"].includes(att2) ) {
             var buff = this.firewall
             this.firewall = this.corruption
-            this.corruption == buff
+            this.corruption = buff
         } else if (["corruption", "TdD"].includes(att1) && ["corruption", "TdD"].includes(att2) ) {
             var buff = this.TdD
             this.TdD = this.corruption
-            this.corruption == buff
+            this.corruption = buff
         } else if (["firewall", "TdD"].includes(att1) && ["firewall", "TdD"].includes(att2) ) {
             var buff = this.firewall
             this.firewall = this.TdD
-            this.TdD == buff
+            this.TdD = buff
         }
         
     }

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CdkDragDrop } from '@angular/cdk/drag-drop';
+
 import { ProgramsService } from '../services/programs.service';
 import { DeckService } from '../services/deck.service';
 import DeckActions from '../../assets/json/deck_actions.json';
@@ -56,8 +58,12 @@ export class DeckPage {
   device: Appareil = new Appareil(Devices.deck[0])
   max_program: number = 0
   current_program: number = 0
+  attributes_list: string[] = ["attaque", "corruption", "firewall", "TdD"]
 
-  constructor(private deckService: DeckService, private programService: ProgramsService) {
+  constructor(
+    private deckService: DeckService, 
+    private programService: ProgramsService
+    ) {
     this.deckService.changeBaseDevice(new Appareil(Devices.deck[1]))
     this.deckService.displayed_device.subscribe(data => this.device = data)
 
@@ -70,6 +76,18 @@ export class DeckPage {
 
   getData() {
     return new Data(DeckActions, DeckPrograms["common_programs"], DeckPrograms["hacking_programs"])
+  }
+
+  drop(event: CdkDragDrop<string[]>) {
+    this.deckService.swapAttributes(this.attributes_list[event.previousIndex], this.attributes_list[event.currentIndex])
+  }
+
+  decreaseCondition() {
+    this.deckService.updateCondition(-1)
+  }
+
+  increaseCondition() {
+    this.deckService.updateCondition(1)
   }
 
 }
