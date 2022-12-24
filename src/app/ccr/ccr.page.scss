@@ -1,0 +1,37 @@
+.device{
+    border: black 1px solid;
+
+    .device_header {
+        margin-bottom: 20px;
+        border-bottom: black 1px solid;
+    }
+
+    .attributes {
+        width:100%;
+
+        .attributename {
+            padding: 10px;
+            justify-content: center;
+            display: flex;
+        }
+
+        .attributebox {
+            padding: 10px;
+            justify-content: center;
+            display: flex;
+            font-size: 25px;
+            align-items: center!important;
+
+            .subattributbox {
+                padding: 0;
+                justify-content: center;
+                display: flex;
+                font-size: 25px;
+            }
+
+            .variationbox {
+                font-size: 16px;
+            }
+        }
+    }
+}

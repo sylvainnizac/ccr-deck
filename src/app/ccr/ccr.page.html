@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      CCR
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,65 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-title size="large">CCR</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-row class="device">
+          <ion-list lines="none" class="width_100">
+            <ion-item class="device_header">
+              <ion-grid>
+                <ion-row class="ion-justify-content-between">
+                  <ion-col size="3">{{device.name}}</ion-col>
+                  <ion-col size="3">indice: {{device.indice}}</ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-item>
+            <ion-item>
+              <ion-grid class="attributes">
+                <ion-row>
+                  <ion-col class="attributename">Firewall</ion-col>
+                  <ion-col class="attributename">TdD</ion-col>
+                  <ion-col class="attributename">Condition</ion-col>
+                </ion-row>
+                <ion-row >
+                  <ion-col class="attributebox"><div class="attribute-custom-placeholder" *cdkDragPlaceholder></div>{{device.firewall}}</ion-col>
+                  <ion-col class="attributebox"><div class="attribute-custom-placeholder" *cdkDragPlaceholder></div>{{device.TdD}}</ion-col>
+                  <ion-col class="attributebox">
+                    <ion-col size="9" class="subattributbox">{{device.condition}}</ion-col>
+                    <ion-col size="3" class="variationbox">
+                      <ion-row><ion-icon (click)="increaseCondition()" name="add-circle"></ion-icon></ion-row>
+                      <ion-row><ion-icon (click)="decreaseCondition()" name="remove-circle"></ion-icon></ion-row>
+                    </ion-col>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-item>
+          </ion-list>
+        </ion-row>
+        <ion-row>
+          <ion-list class="width_100">
+            <app-display-actions [categories]="data.categories" [headers]="data.actionsHeaders"></app-display-actions>
+          </ion-list>
+        </ion-row>
+      </ion-col>
+      <ion-col class="right_grid">
+        <ion-row>
+          <p>Nombre maximum de programmes pouvant être actif en même temps: {{max_program}} programmes</p>
+        </ion-row>
+        <ion-row>
+          <p>Il y a actuellement {{current_program}} programmes actifs</p>
+        </ion-row>
+        <ion-row>
+          <ion-list class="width_100">
+            <app-display-programs [programs]="data.programs" [headers]="data.programsHeaders"></app-display-programs>
+          </ion-list>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
 </ion-content>

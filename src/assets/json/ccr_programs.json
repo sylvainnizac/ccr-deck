@@ -1,0 +1,8 @@
+{
+    "common_programs": [
+    {"active": false, "installed": false, "name": "Cryptage", "page": 246, "description": "Firewall + 1"},
+    {"active": false, "installed": false, "name": "Toolbox", "page": 246, "description": "TdD + 1"}
+  ],  
+  "hacking_programs": [
+  ]
+}

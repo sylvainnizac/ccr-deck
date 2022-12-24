@@ -54,7 +54,6 @@
             {"name": "entrer dans un serveur","mark": "1","test": "auncun","limite": "TdD","type": "Complexe","page": 240},
             {"name": "sortir d'un serveur","mark": "aucune","test": "auncun","limite": "TdD","type": "Complexe","page": 240},
             {"name": "envoyer un message","mark": "1","test": "auncun","limite": "TdD","type": "Simple","page": 241},
-            {"name": "plonger dans un véhicule interfacé","mark": "3","test": "G.Elec+LOG vs Firewall+VOL","limite": "TdD","type": "Complexe","page": 243},
             {"name": "reconfigurer le deck","mark": "4","test": "auncun","limite": "N/A","type": "Gratuite","page": 229},
             {"name": "saut de grille","mark": "aucune","test": "auncun","limite": "TdD","type": "Complexe","page": 244},
             {"name": "se cacher","mark": "aucune","test": "G.Elec+INT vs TdD+INT","limite": "Corruption","type": "Complexe","page": 244},
