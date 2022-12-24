@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { ProgramsService } from '../services/programs.service';
-import { DeckService } from '../services/deck.service';
+import { CcrService } from '../services/ccr.service';
 import CCRActions from '../../assets/json/ccr_actions.json';
 import CCRPrograms from '../../assets/json/ccr_programs.json';
 import Devices from '../../assets/json/devices.json';
@@ -22,11 +22,11 @@ export class CcrPage {
   attributes_list: string[] = ["attaque", "corruption", "firewall", "TdD"]
 
   constructor(
-    private deckService: DeckService, 
+    private CcrService: CcrService, 
     private programService: ProgramsService
     ) {
-    this.deckService.changeBaseDevice(new Appareil(Devices.ccr[1]))
-    this.deckService.displayed_device.subscribe(data => this.device = data)
+    this.CcrService.changeBaseDevice(new Appareil(Devices.ccr[1]))
+    this.CcrService.displayed_device.subscribe(data => this.device = data)
 
     this.data = this.getData()
 
@@ -40,11 +40,11 @@ export class CcrPage {
   }
 
   decreaseCondition() {
-    this.deckService.updateCondition(-1)
+    this.CcrService.updateCondition(-1)
   }
 
   increaseCondition() {
-    this.deckService.updateCondition(1)
+    this.CcrService.updateCondition(1)
   }
 
 }

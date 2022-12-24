@@ -32,8 +32,8 @@ export class Appareil implements BaseAppareil {
         this.firewall = device.firewall
         this.TdD = device.TdD
 
-        this.condition = 8 + (device.indice/2)
-        this.base_condition = 8 + (device.indice/2)
+        this.condition = 8 + Math.ceil(device.indice/2)
+        this.base_condition = 8 + Math.ceil(device.indice/2)
         this.disabled = false
     }
 
