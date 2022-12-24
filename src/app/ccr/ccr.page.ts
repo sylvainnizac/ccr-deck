@@ -25,7 +25,7 @@ export class CcrPage {
     private CcrService: CcrService, 
     private programService: ProgramsService
     ) {
-    this.CcrService.changeBaseDevice(new Appareil(Devices.ccr[1]))
+    this.CcrService.changeBaseDevice(new Appareil(Devices.ccr[3]))
     this.CcrService.displayed_device.subscribe(data => this.device = data)
 
     this.data = this.getData()
