@@ -3,8 +3,8 @@
         "name": "actions via la CCR",
         "actions": [
             {"name": "compenser le bruit","mark": "aucune","test": "G.Elec+LOG","limite": "TdD","type": "Complexe","page": 270},
-            {"name": "passer d'un drone à l'autre via CCR","mark": "4","test": "aucun","limite": "aucune","type": "Simple","page": 269},
             {"name": "donner un ordre à 1 ou plusieurs drones","mark": "4","test": "aucun","limite": "aucune","type": "Simple","page": 269},
+            {"name": "passer d'un drone à l'autre via CCR","mark": "4","test": "aucun","limite": "aucune","type": "Simple","page": 269},
             {"name": "plonger dans un véhicule interfacé (illégal)","mark": "3","test": "G.Elec+LOG vs Firewall+VOL","limite": "TdD","type": "Complexe","page": 243},
             {"name": "plonger dans un véhicule interfacé (légal)","mark": "4","test": "auncun","limite": "aucune","type": "Complexe","page": 243},
             {"name": "sortir d'un drone","mark": "aucune","test": "aucun","limite": "aucune","type": "Simple","page": 268}
@@ -13,28 +13,28 @@
     {
         "name": "actions des drones",
         "actions": [
-            {"name": "perception","mark": "aucune","test": "Autopilote + Acuité","limite": "Senseurs","type": "Simple","page": 272},
+            {"name": "acquisition de cible","mark": "aucune","test": "Autopilote + Acuité vs \"échapper à l'aquisition\"","limite": "Senseurs","type": "Simple","page": 186}
+            {"name": "attaque","mark": "aucune","test": "Autopilote + Acquisition","limite": "Précision","type": "Simple","page": 185},
+            {"name": "attaque avec les senseurs","mark": "aucune","test": "Autopilote + Acquisition","limite": "Senseurs","type": "Simple","page": 185},
             {"name": "déplacement délicat","mark": "aucune","test": "Autopilote + Manoeuvre","limite": "Maniabilité","type": "Simple","page": 272},
             {"name": "déplacement rapide","mark": "aucune","test": "Autopilote + Manoeuvre","limite": "Vitesse","type": "Simple","page": 272},
-            {"name": "discrétion","mark": "aucune","test": "autopilote + Furtivité","limite": "Maniabilité","type": "Simple","page": 272},
+            {"name": "discrétion","mark": "aucune","test": "autopilote + Furtivité vs Perception + INT","limite": "Maniabilité","type": "Simple","page": 272},
+            {"name": "échapper à l'aquisition","mark": "aucune","test": "Autopilot + Evasion vs \"aquisition de cible\"","limite": "Maniabilité","type": "Simple","page": 185},
             {"name": "initiative","mark": "aucune","test": "Autopilot x 2 + 4d6","limite": "aucune","type": "Simple","page": 272},
-            {"name": "attaque","mark": "aucune","test": "Autopilote + Acquisition","limite": "Précision","type": "Simple","page": 185},
-            {"name": "échapper à l'aquisition'","mark": "aucune","test": "Autopilot + Evasion","limite": "Maniabilité","type": "Simple","page": 185},
-            {"name": "acquisition de cible","mark": "aucune","test": "Autopilote + Acuité","limite": "Senseurs","type": "Simple","page": 186}
+            {"name": "perception","mark": "aucune","test": "Autopilote + Acuité","limite": "Senseurs","type": "Simple","page": 272}
         ]
     }
     },
     {
         "name": "actions du rigger dans un drones",
         "actions": [
-            {"name": "perception","mark": "aucune","test": "Autopilote + Acuité","limite": "Senseurs","type": "Complexe","page": 272},
-            {"name": "déplacement délicat","mark": "aucune","test": "Autopilote + Manoeuvre","limite": "Maniabilité","type": "Simple","page": 272},
-            {"name": "déplacement rapide","mark": "aucune","test": "Autopilote + Manoeuvre","limite": "Vitesse","type": "Simple","page": 272},
-            {"name": "discrétion","mark": "aucune","test": "autopilote + Furtivité","limite": "maniabilité","type": "Simple","page": 272},
-            {"name": "initiative","mark": "aucune","test": "Autopilot x 2 + 4d6","limite": "aucune","type": "Simple","page": 272},
-            {"name": "attaque","mark": "aucune","test": "Autopilote + Acquisition","limite": "Précision","type": "Simple","page": 185},
-            {"name": "échapper à l'aquisition'","mark": "aucune","test": "Autopilot + Evasion","limite": "Maniabilité","type": "Simple","page": 185},
-            {"name": "acquisition de cible","mark": "aucune","test": "Autopilote + Acuité","limite": "Senseurs","type": "Simple","page": 186}
+            {"name": "acquisition de cible","mark": "aucune","test": "Perception + INT vs \"échapper à l'aquisition\"","limite": "Senseurs","type": "Simple","page": 186},
+            {"name": "attaque","mark": "aucune","test": "Arme de véhicule + LOG","limite": "Précision","type": "Simple","page": 185},
+            {"name": "déplacement délicat","mark": "aucune","test": "Comp. véhicule + REA","limite": "Maniabilité","type": "Simple","page": 272},
+            {"name": "déplacement rapide","mark": "aucune","test": "Comp. véhicule + REA","limite": "Vitesse","type": "Simple","page": 272},
+            {"name": "discrétion","mark": "aucune","test": "Discrétion + INT vs Perception + INT","limite": "maniabilité","type": "Simple","page": 272},
+            {"name": "échapper à l'aquisition","mark": "aucune","test": "Discrétion + REA vs \"aquisition de cible\"","limite": "Maniabilité","type": "Simple","page": 185},
+            {"name": "perception","mark": "aucune","test": "Perception + INT","limite": "Senseurs","type": "Complexe","page": 272}
         ]
     }
 ]
