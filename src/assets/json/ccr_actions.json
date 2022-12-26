@@ -13,7 +13,7 @@
     {
         "name": "actions des drones",
         "actions": [
-            {"name": "acquisition de cible","mark": "aucune","test": "Autopilote + Acuité vs \"échapper à l'aquisition\"","limite": "Senseurs","type": "Simple","page": 186}
+            {"name": "acquisition de cible","mark": "aucune","test": "Autopilote + Acuité vs \"échapper à l'aquisition\"","limite": "Senseurs","type": "Simple","page": 186},
             {"name": "attaque","mark": "aucune","test": "Autopilote + Acquisition","limite": "Précision","type": "Simple","page": 185},
             {"name": "attaque avec les senseurs","mark": "aucune","test": "Autopilote + Acquisition","limite": "Senseurs","type": "Simple","page": 185},
             {"name": "déplacement délicat","mark": "aucune","test": "Autopilote + Manoeuvre","limite": "Maniabilité","type": "Simple","page": 272},
@@ -23,7 +23,6 @@
             {"name": "initiative","mark": "aucune","test": "Autopilot x 2 + 4d6","limite": "aucune","type": "Simple","page": 272},
             {"name": "perception","mark": "aucune","test": "Autopilote + Acuité","limite": "Senseurs","type": "Simple","page": 272}
         ]
-    }
     },
     {
         "name": "actions du rigger dans un drones",
