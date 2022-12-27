@@ -1,9 +1,13 @@
-<ion-list-header *ngIf="headers">
-  <ion-label *ngFor="let head of headers">{{head}}</ion-label>
-</ion-list-header>
 <ion-list-header *ngIf="title">
   <ion-label>{{title}}</ion-label>
 </ion-list-header>
+<ion-item>
+  <ion-col size="1">active</ion-col>
+  <ion-col size="1">installed</ion-col>
+  <ion-col size="3">name</ion-col>
+  <ion-col size="1">page</ion-col>
+  <ion-col size="6">description</ion-col>
+</ion-item>
 <ion-item *ngFor="let program of programs">
   <ion-grid>
     <ion-row>

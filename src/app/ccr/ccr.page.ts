@@ -19,7 +19,6 @@ export class CcrPage {
   device: Appareil = new Appareil(Devices.ccr[0])
   max_program: number = 0
   current_program: number = 0
-  attributes_list: string[] = ["attaque", "corruption", "firewall", "TdD"]
 
   constructor(
     private CcrService: CcrService, 
