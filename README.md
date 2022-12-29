@@ -29,5 +29,5 @@ nothing special for now
 ## How to create the apk
 
 - in visual studio code, go to the ionic panel (left column) and select option "open in android studio"
-- in andoid studio, gi to the top bar and select the "build" menu and click to option "???"
+- in andoid studio, go to the top bar and select the "build" menu and click to option "Build Bundle(s)/APK" than "Build APK(s)"
 - after generation of the apl it's in folder ???
