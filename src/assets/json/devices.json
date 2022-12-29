@@ -1,6 +1,5 @@
 {
   "ccr" :[
-    {"name": "temporary", "indice": 0, "attaque": 0, "corruption": 0, "firewall": 0, "TdD": 0},
     {"name": "scratch-built junk", "indice": 1, "attaque": 0, "corruption": 0, "firewall": 2, "TdD": 3},
     {"name": "Radio Shack Remote Controller", "indice": 2, "attaque": 0, "corruption": 0, "firewall": 3, "TdD": 3},
     {"name": "Essy Motors Dronemaster", "indice": 3, "attaque": 0, "corruption": 0, "firewall": 4, "TdD": 4},
@@ -14,7 +13,6 @@
     {"name": "Triox UberMensch", "indice": 6, "attaque": 0, "corruption": 0, "firewall": 7, "TdD": 8}
   ],
   "deck" :[
-    {"name": "temporary", "indice": 0, "attaque": 0, "corruption": 0, "firewall": 0, "TdD": 0},
     {"name": "Erika MCD-1", "indice": 1, "attaque": 4, "corruption": 3, "firewall": 2, "TdD": 1},
     {"name": "Microdeck Summit", "indice": 1, "attaque": 4, "corruption": 3, "firewall": 3, "TdD": 1},
     {"name": "Microtronica Azteca 200", "indice": 2, "attaque": 5, "corruption": 4, "firewall": 3, "TdD": 2},
@@ -24,5 +22,8 @@
     {"name": "Sony CIY-720", "indice": 4, "attaque": 7, "corruption": 6, "firewall": 5, "TdD": 4},
     {"name": "Shiawase Cyber-5", "indice": 5, "attaque": 8, "corruption": 7, "firewall": 6, "TdD": 5},
     {"name": "Fairlight Excalibur", "indice": 6, "attaque": 9, "corruption": 8, "firewall": 7, "TdD": 6}
+  ],
+  "temporary":[
+    {"name": "temporary", "indice": 0, "attaque": 0, "corruption": 0, "firewall": 0, "TdD": 0}
   ]
 }

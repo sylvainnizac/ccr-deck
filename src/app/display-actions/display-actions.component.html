@@ -5,18 +5,23 @@
         <ion-label>{{category.name}}</ion-label>
       </ion-item>
       <div class="ion-padding" slot="content">
-        <ion-list-header>
-          <ion-label *ngFor="let head of headers">{{head}}</ion-label>
-        </ion-list-header>
-        <ion-item *ngFor="let action of category.actions" class="item-accordion" ng-show="isGroupShown(category)">
+        <ion-item class="headers">
+          <ion-col size="2">name</ion-col>
+          <ion-col size="1">mark</ion-col>
+          <ion-col size="4">test</ion-col>
+          <ion-col size="2">limite</ion-col>
+          <ion-col size="2">type</ion-col>
+          <ion-col size="1">page</ion-col>
+        </ion-item>
+        <ion-item>
           <ion-grid>
-            <ion-row>
-              <ion-col>{{action.name}}</ion-col>
-              <ion-col>{{action.mark}}</ion-col>
-              <ion-col>{{action.test}}</ion-col>
-              <ion-col>{{action.limite}}</ion-col>
-              <ion-col>{{action.type}}</ion-col>
-              <ion-col>{{action.page}}</ion-col>
+            <ion-row *ngFor="let action of category.actions; index as i, odd as isOdd; even as isEven" [class.Odd]="isOdd" [class.Even]="isEven" class="item-accordion" ng-show="isGroupShown(category)">
+              <ion-col size="2">{{action.name}}</ion-col>
+              <ion-col size="1">{{action.mark}}</ion-col>
+              <ion-col size="4">{{action.test}}</ion-col>
+              <ion-col size="2">{{action.limite}}</ion-col>
+              <ion-col size="2">{{action.type}}</ion-col>
+              <ion-col size="1">{{action.page}}</ion-col>
             </ion-row>
           </ion-grid>
         </ion-item>

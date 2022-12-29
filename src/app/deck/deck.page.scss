@@ -4,6 +4,12 @@
     .device_header {
         margin-bottom: 20px;
         border-bottom: black 1px solid;
+
+        .indicedisplay{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     }
 
     .attributes {
@@ -22,14 +28,6 @@
             font-size: 25px;
             align-items: center!important;
 
-            .attribute-custom-placeholder {
-                background: #ccc;
-                border: dotted 3px #999;
-                min-height: 30px;
-                width: 20%;
-                transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
-            }
-
             .subattributbox {
                 padding: 0;
                 justify-content: center;
@@ -44,6 +42,10 @@
     }
 }
 
+.informationrow {
+    margin-top: 10px;
+}
+
 .cdk-drag-preview {
 box-sizing: border-box;
 border-radius: 4px;
@@ -54,4 +56,12 @@ box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
 
 .cdk-drag-animating {
 transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.attribute-custom-placeholder {
+    background: #ccc;
+    border: dotted 3px #999;
+    min-height: 30px;
+    width: 20%;
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }

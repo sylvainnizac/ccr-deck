@@ -21,8 +21,16 @@
             <ion-item class="device_header">
               <ion-grid>
                 <ion-row class="ion-justify-content-between">
-                  <ion-col size="3">{{device.name}}</ion-col>
-                  <ion-col size="3">indice: {{device.indice}}</ion-col>
+                  <ion-col size="3">
+                    <ion-list>
+                      <ion-item>
+                        <ion-select placeholder="Select device" (ionChange)="changeDevice($event)" [(ngModel)]="device" [compareWith]="compareWith">
+                          <ion-select-option *ngFor="let d of all_devices" [value]="d">{{d.name}}</ion-select-option>
+                        </ion-select>
+                      </ion-item>
+                    </ion-list>
+                  </ion-col>
+                  <ion-col size="3" class="indicedisplay">indice: {{device.indice}}</ion-col>
                 </ion-row>
               </ion-grid>
             </ion-item>
@@ -48,6 +56,7 @@
             </ion-item>
           </ion-list>
         </ion-row>
+        <ion-row class="informationrow">TdD <ion-icon name="arrow-forward-outline"></ion-icon> Traitement de données</ion-row>
         <ion-row>
           <ion-list class="width_100">
             <app-display-actions [categories]="data.categories" [headers]="data.actionsHeaders"></app-display-actions>
@@ -63,7 +72,8 @@
         </ion-row>
         <ion-row>
           <ion-list class="width_100">
-            <app-display-programs [programs]="data.programs" [headers]="data.programsHeaders"></app-display-programs>
+            <app-display-programs [programs]="data.programs" title="Programmes communs"></app-display-programs>
+            <app-display-programs [programs]="data.hacking_programs" title="Programmes de hacking"></app-display-programs>
           </ion-list>
         </ion-row>
       </ion-col>
