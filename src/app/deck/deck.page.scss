@@ -4,6 +4,12 @@
     .device_header {
         margin-bottom: 20px;
         border-bottom: black 1px solid;
+
+        .indicedisplay{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     }
 
     .attributes {

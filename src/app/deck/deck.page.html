@@ -21,8 +21,16 @@
             <ion-item class="device_header">
               <ion-grid>
                 <ion-row class="ion-justify-content-between">
-                  <ion-col size="3">{{device.name}}</ion-col>
-                  <ion-col size="3">indice: {{device.indice}}</ion-col>
+                  <ion-col size="3">
+                    <ion-list>
+                      <ion-item>
+                        <ion-select placeholder="Select device" (ionChange)="changeDevice($event)" [(ngModel)]="device" [compareWith]="compareWith">
+                          <ion-select-option *ngFor="let d of all_devices" [value]="d">{{d.name}}</ion-select-option>
+                        </ion-select>
+                      </ion-item>
+                    </ion-list>
+                  </ion-col>
+                  <ion-col size="3" class="indicedisplay">indice: {{device.indice}}</ion-col>
                 </ion-row>
               </ion-grid>
             </ion-item>
