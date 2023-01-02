@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { CdkDragDrop } from '@angular/cdk/drag-drop';
 
-import { ProgramsService } from '../services/programs.service';
+import { Appareil } from '../interfaces/deck';
+import { Data } from '../interfaces/datastruct';
 import { DeckService } from '../services/deck.service';
+import { ProgramsService } from '../services/programs.service';
+import { TranslateConfigService } from '../services/translate-config.service';
 import DeckActions from '../../assets/json/deck_actions.json';
 import DeckPrograms from '../../assets/json/deck_programs.json';
 import Devices from '../../assets/json/devices.json';
-import { Appareil } from '../interfaces/deck';
-import { Data } from '../interfaces/datastruct';
 
 @Component({
   selector: 'app-deck',
@@ -23,9 +24,12 @@ export class DeckPage {
   current_program: number = 0
   attributes_list: string[] = ["attaque", "corruption", "firewall", "TdD"]
 
+  language: string
+
   constructor(
     private deckService: DeckService, 
-    private programService: ProgramsService
+    private programService: ProgramsService,
+    private translateConfigService: TranslateConfigService
     ) {
     this.deckService.changeBaseDevice(new Appareil(Devices.deck[0]))
     this.deckService.displayed_device.subscribe(data => this.device = data)
@@ -39,6 +43,9 @@ export class DeckPage {
     for (let appareil of Devices.deck){
       this.all_devices.push(new Appareil(appareil))
     }
+
+    this.translateConfigService.getDefaultLanguage()
+    this.language = this.translateConfigService.getCurrentLang()
   }
 
   getData() {

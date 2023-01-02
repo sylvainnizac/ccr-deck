@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 
-import { ProgramsService } from '../services/programs.service';
+import { Appareil } from '../interfaces/deck';
+import { Data } from '../interfaces/datastruct';
 import { CcrService } from '../services/ccr.service';
+import { ProgramsService } from '../services/programs.service';
+import { TranslateConfigService } from '../services/translate-config.service';
 import CCRActions from '../../assets/json/ccr_actions.json';
 import CCRPrograms from '../../assets/json/ccr_programs.json';
 import Devices from '../../assets/json/devices.json';
-import { Appareil } from '../interfaces/deck';
-import { Data } from '../interfaces/datastruct';
+
 
 @Component({
   selector: 'app-ccr',
@@ -18,12 +20,16 @@ export class CcrPage {
   data: Data
   device: Appareil = new Appareil(Devices.temporary[0])
   all_devices: Appareil[] = []
+  
   max_program: number = 0
   current_program: number = 0
 
+  language: string
+
   constructor(
     private CcrService: CcrService, 
-    private programService: ProgramsService
+    private programService: ProgramsService,
+    private translateConfigService: TranslateConfigService
     ) {
     this.CcrService.changeBaseDevice(new Appareil(Devices.ccr[2]))
     this.CcrService.displayed_device.subscribe(data => this.device = data)
@@ -37,6 +43,9 @@ export class CcrPage {
     for (let appareil of Devices.ccr){
       this.all_devices.push(new Appareil(appareil))
     }
+
+    this.translateConfigService.getDefaultLanguage()
+    this.language = this.translateConfigService.getCurrentLang()
   }
 
   getData() {

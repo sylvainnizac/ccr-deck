@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { DeckPageRoutingModule } from './deck-routing.module';
 import { DeckPage } from './deck.page';
@@ -12,13 +13,14 @@ import { DisplayActionsComponentModule } from '../display-actions/display-action
 
 @NgModule({
   imports: [
-    IonicModule,
     CommonModule,
+    DeckPageRoutingModule,
     DisplayProgramComponentModule,
     DisplayActionsComponentModule,
     DragDropModule,
     FormsModule,
-    DeckPageRoutingModule
+    IonicModule,
+    TranslateModule
   ],
   declarations: [DeckPage]
 })
