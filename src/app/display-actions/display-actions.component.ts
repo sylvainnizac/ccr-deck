@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+
 import { Category } from '../interfaces/action';
+import { TranslateConfigService } from '../services/translate-config.service';
 
 @Component({
   selector: 'app-display-actions',
@@ -11,7 +13,14 @@ export class DisplayActionsComponent implements OnInit {
   @Input() categories?: Category[];
   @Input() headers?: string[];
 
-  constructor() { }
+  language: string
+
+  constructor(
+    private translateConfigService: TranslateConfigService
+  ) {
+    this.translateConfigService.getDefaultLanguage()
+    this.language = this.translateConfigService.getCurrentLang()
+  }
 
   ngOnInit() {}
 

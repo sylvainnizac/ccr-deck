@@ -1,5 +1,7 @@
 {
     "APP_VERSION": "version de l'application",
-    "ATTACK": "Attaque",
-    "CHARACTER": "Personnage"
+    "ATTACK": "attaque",
+    "CHARACTER": "personnage",
+    "NAME": "nom",
+    "PAGE": "page"
 }

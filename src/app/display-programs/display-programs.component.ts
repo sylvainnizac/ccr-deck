@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+
 import { Program } from '../interfaces/program';
 import { ProgramsService } from '../services/programs.service';
+import { TranslateConfigService } from '../services/translate-config.service';
 
 @Component({
   selector: 'app-display-programs',
@@ -15,11 +17,19 @@ export class DisplayProgramsComponent implements OnInit {
   max_program: number = 0;
   current_program: number = 0;
 
+  language: string
+
   ngOnInit() {}
 
-  constructor(private programService: ProgramsService) {
+  constructor(
+    private programService: ProgramsService,
+    private translateConfigService: TranslateConfigService
+    ) {
     this.programService.max_program.subscribe(data => this.max_program = data)
     this.programService.current_program.subscribe(data => this.current_program = data)
+
+    this.translateConfigService.getDefaultLanguage()
+    this.language = this.translateConfigService.getCurrentLang()
   }
 
   setActive(e: any) {
