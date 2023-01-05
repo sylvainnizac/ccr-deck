@@ -30,7 +30,7 @@
                       </ion-item>
                     </ion-list>
                   </ion-col>
-                  <ion-col size="3" class="indicedisplay">indice: {{device.indice}}</ion-col>
+                  <ion-col size="3" class="indicedisplay">{{ "DEVICE_RATING" | translate }}: {{device.indice}}</ion-col>
                 </ion-row>
               </ion-grid>
             </ion-item>
@@ -38,10 +38,10 @@
               <ion-grid class="attributes">
                 <ion-row>
                   <ion-col class="attributename">{{ "ATTACK" | translate }}</ion-col>
-                  <ion-col class="attributename">Corruption</ion-col>
-                  <ion-col class="attributename">Firewall</ion-col>
-                  <ion-col class="attributename">TdD</ion-col>
-                  <ion-col class="attributename">Condition</ion-col>
+                  <ion-col class="attributename">{{ "SLEAZE" | translate }}</ion-col>
+                  <ion-col class="attributename">{{ "FIREWALL" | translate }}</ion-col>
+                  <ion-col class="attributename">{{ "D_PROC" | translate }}</ion-col>
+                  <ion-col class="attributename">{{ "CONDITION" | translate }}</ion-col>
                 </ion-row>
                 <ion-row cdkDropList cdkDropListOrientation="horizontal" (cdkDropListDropped)="drop($event)">
                   <ion-col class="attributebox" cdkDrag><div class="attribute-custom-placeholder" *cdkDragPlaceholder></div>{{device.attaque}}</ion-col>
@@ -60,7 +60,7 @@
             </ion-item>
           </ion-list>
         </ion-row>
-        <ion-row class="informationrow">TdD <ion-icon name="arrow-forward-outline"></ion-icon> Traitement de données</ion-row>
+        <ion-row class="informationrow">{{ "D_PROC" | translate }} <ion-icon name="arrow-forward-outline"></ion-icon> {{ "DATA_PROCESS" | translate }}</ion-row>
         <ion-row>
           <ion-list class="width_100">
             <app-display-actions [categories]="data.categories" [headers]="data.actionsHeaders"></app-display-actions>
@@ -69,10 +69,10 @@
       </ion-col>
       <ion-col class="right_grid">
         <ion-row>
-          <p>Nombre maximum de programmes pouvant être actif en même temps: {{max_program}} programmes</p>
+          <p>{{ "MAX_PROGRAM_DESC" | translate : { number: max_program } }}</p>
         </ion-row>
         <ion-row>
-          <p>Il y a actuellement {{current_program}} programmes actifs</p>
+          <p>{{ "CURRENT_PROGRAM_DESC" | translate : { number: current_program } }}</p>
         </ion-row>
         <ion-row>
           <ion-list class="width_100">

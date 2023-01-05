@@ -1,7 +1,25 @@
 {
+    "ACTIVE": "actif",
     "APP_VERSION": "version de l'application",
     "ATTACK": "attaque",
     "CHARACTER": "personnage",
+    "CONDITION": "condition",
+    "CURRENT_PROGRAM_DESC": "Il y a actuellement {{ number }} programmes actifs",
+    "D_PROC": "TdD",
+    "DATA_PROCESS": "traitement de données",
+    "DEVICE_RATING": "indice",
+    "DESCRIPTION": "description",
+    "FIREWALL": "firewall",
+    "LIMIT": "limite",
+    "LOADED": "chargé",
+    "MARK": "mark",
+    "MAX_PROGRAM_DESC": "Nombre maximum de programmes pouvant être actif en même temps: {{ number }} programmes",
     "NAME": "nom",
-    "PAGE": "page"
+    "NOISE_REDUCTION": "réduction de bruit",
+    "N_RED": "R.Bruit",
+    "PAGE": "page",
+    "PROGRAM": "programme",
+    "SLEAZE": "corruption",
+    "TEST": "test",
+    "TYPE": "type"
 }

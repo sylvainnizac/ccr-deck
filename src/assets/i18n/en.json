@@ -1,7 +1,25 @@
 {
+    "ACTIVE": "active",
     "APP_VERSION": "app version",
     "ATTACK": "attack",
     "CHARACTER": "character",
+    "CONDITION": "condition",
+    "CURRENT_PROGRAM_DESC": "There is currently {{ number }} active programs",
+    "D_PROC": "D.Proc",
+    "DATA_PROCESS": "data processing",
+    "DEVICE_RATING": "device rating",
+    "DESCRIPTION": "description",
+    "FIREWALL": "firewall",
+    "LIMIT": "limit",
+    "LOADED": "loaded",
+    "MARK": "mark",
+    "MAX_PROGRAM_DESC": "Maximum number of active programs: {{ number }} programmes",
     "NAME": "name",
-    "PAGE": "page"
+    "NOISE_REDUCTION": "noise reduction",
+    "N_RED": "N.Red",
+    "PAGE": "page",
+    "PROGRAM": "program",
+    "SLEAZE": "sleaze",
+    "TEST": "test",
+    "TYPE": "type"
 }
