@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CdkDragDrop } from '@angular/cdk/drag-drop';
 
-import { Appareil } from '../interfaces/deck';
+import { Device } from '../interfaces/devices';
 import { Data } from '../interfaces/datastruct';
 import { DeckService } from '../services/deck.service';
 import { ProgramsService } from '../services/programs.service';
@@ -18,11 +18,11 @@ import Devices from '../../assets/json/devices.json';
 export class DeckPage {
 
   data: Data
-  device: Appareil = new Appareil(Devices.temporary[0])
-  all_devices: Appareil[] = []
+  device: Device = new Device(Devices.temporary[0])
+  all_devices: Device[] = []
   max_program: number = 0
   current_program: number = 0
-  attributes_list: string[] = ["attaque", "corruption", "firewall", "TdD"]
+  attributes_list: string[] = ["attack", "sleaze", "firewall", "DProc"]
 
   language: string
 
@@ -31,17 +31,17 @@ export class DeckPage {
     private programService: ProgramsService,
     private translateConfigService: TranslateConfigService
     ) {
-    this.deckService.changeBaseDevice(new Appareil(Devices.deck[0]))
+    this.deckService.changeBaseDevice(new Device(Devices.deck[0]))
     this.deckService.displayed_device.subscribe(data => this.device = data)
 
     this.data = this.getData()
 
-    this.programService.setMaxProgram(this.device.indice)
+    this.programService.setMaxProgram(this.device.rating)
     this.programService.max_program.subscribe(data => this.max_program = data)
     this.programService.current_program.subscribe(data => this.current_program = data)
 
     for (let appareil of Devices.deck){
-      this.all_devices.push(new Appareil(appareil))
+      this.all_devices.push(new Device(appareil))
     }
 
     this.translateConfigService.getDefaultLanguage()
@@ -65,7 +65,7 @@ export class DeckPage {
   }
 
   changeDevice(event: Event) {
-    this.programService.setMaxProgram(this.device.indice)
+    this.programService.setMaxProgram(this.device.rating)
   }
 
   compareWith(o1: any, o2: any) {

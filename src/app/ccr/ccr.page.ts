@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { Appareil } from '../interfaces/deck';
+import { Device } from '../interfaces/devices';
 import { Data } from '../interfaces/datastruct';
 import { CcrService } from '../services/ccr.service';
 import { ProgramsService } from '../services/programs.service';
@@ -18,8 +18,8 @@ import Devices from '../../assets/json/devices.json';
 export class CcrPage {
 
   data: Data
-  device: Appareil = new Appareil(Devices.temporary[0])
-  all_devices: Appareil[] = []
+  device: Device = new Device(Devices.temporary[0])
+  all_devices: Device[] = []
   
   max_program: number = 0
   current_program: number = 0
@@ -31,17 +31,17 @@ export class CcrPage {
     private programService: ProgramsService,
     private translateConfigService: TranslateConfigService
     ) {
-    this.CcrService.changeBaseDevice(new Appareil(Devices.ccr[2]))
+    this.CcrService.changeBaseDevice(new Device(Devices.ccr[2]))
     this.CcrService.displayed_device.subscribe(data => this.device = data)
 
     this.data = this.getData()
 
-    this.programService.setMaxProgram(this.device.indice)
+    this.programService.setMaxProgram(this.device.rating)
     this.programService.max_program.subscribe(data => this.max_program = data)
     this.programService.current_program.subscribe(data => this.current_program = data)
 
     for (let appareil of Devices.ccr){
-      this.all_devices.push(new Appareil(appareil))
+      this.all_devices.push(new Device(appareil))
     }
 
     this.translateConfigService.getDefaultLanguage()
@@ -61,7 +61,7 @@ export class CcrPage {
   }
 
   changeDevice(event: Event) {
-    this.programService.setMaxProgram(this.device.indice)
+    this.programService.setMaxProgram(this.device.rating)
   }
 
   compareWith(o1: any, o2: any) {

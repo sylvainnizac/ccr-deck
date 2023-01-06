@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Appareil } from '../interfaces/deck';
+import { Device } from '../interfaces/devices';
 import Devices from '../../assets/json/devices.json';
 
 @Injectable({
@@ -8,14 +8,14 @@ import Devices from '../../assets/json/devices.json';
 })
 export class CcrService {
 
-  device = new Appareil(Devices.deck[0])
-  current_device: Appareil
-  displayed_device = new BehaviorSubject(new Appareil(Devices.deck[0]))
+  device = new Device(Devices.temporary[0])
+  current_device: Device
+  displayed_device = new BehaviorSubject(new Device(Devices.temporary[0]))
 
-  attaquemod: number = 0
-  corruptionmod: number = 0
+  attackmod: number = 0
+  sleazemod: number = 0
   firewallmod: number = 0
-  TdDmod: number = 0
+  DProcmod: number = 0
 
   constructor() {
     this.current_device = this.device
@@ -24,15 +24,15 @@ export class CcrService {
 
   private applyMods() {
     var temp_device = this.current_device
-    temp_device.applyMods(this.attaquemod, this.corruptionmod, this.firewallmod, this.TdDmod)
+    temp_device.applyMods(this.attackmod, this.sleazemod, this.firewallmod, this.DProcmod)
     this.setDisplayedDevice(temp_device)
   }
 
-  private setDisplayedDevice(value: Appareil) {
+  private setDisplayedDevice(value: Device) {
     this.displayed_device.next(value)
   }
 
-  changeBaseDevice(new_device: Appareil) {
+  changeBaseDevice(new_device: Device) {
     this.device = new_device
     this.current_device = this.device
     this.applyMods()
@@ -46,8 +46,8 @@ export class CcrService {
   updateMod(mod_name: string, value: number) {
      if (mod_name == "firewall") {
       this.firewallmod += value
-    } else if (mod_name == "TdD") {
-      this.TdDmod += value
+    } else if (mod_name == "DProc") {
+      this.DProcmod += value
     }
   }
 

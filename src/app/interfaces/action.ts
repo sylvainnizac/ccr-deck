@@ -2,7 +2,7 @@ export type Action = {
     name: string;
     mark: string;
     test: string;
-    limite: string;
+    limit: string;
     type: string;
     page: number;
   }
