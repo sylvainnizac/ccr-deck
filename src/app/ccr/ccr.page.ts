@@ -24,6 +24,8 @@ export class CcrPage {
   max_program: number = 0
   current_program: number = 0
 
+  noise: number = 0
+
   language: string
 
   constructor(
@@ -33,6 +35,7 @@ export class CcrPage {
     ) {
     this.CcrService.changeBaseDevice(new Device(Devices.ccr[2]))
     this.CcrService.displayed_device.subscribe(data => this.device = data)
+    this.CcrService.displayed_noise.subscribe(data => this.noise = data)
 
     this.data = this.getData()
 
@@ -58,6 +61,14 @@ export class CcrPage {
 
   increaseCondition() {
     this.CcrService.updateCondition(1)
+  }
+
+  decreaseNoise() {
+    this.CcrService.updateNoise(-1)
+  }
+
+  increaseNoise() {
+    this.CcrService.updateNoise(1)
   }
 
   changeDevice(event: Event) {

@@ -15,6 +15,7 @@
     "MARK": "mark",
     "MAX_PROGRAM_DESC": "Nombre maximum de programmes pouvant être actif en même temps: {{ number }} programmes",
     "NAME": "nom",
+    "NOISE": "bruit",
     "NOISE_REDUCTION": "réduction de bruit",
     "N_RED": "R.Bruit",
     "PAGE": "page",

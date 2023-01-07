@@ -21,6 +21,10 @@ export class Device implements BaseDevice {
     base_condition: number
     disabled: boolean
 
+    base_noise: number
+    noise: number
+    noise_reduction: number
+
     constructor (
         public device: BaseDevice
         ) {
@@ -35,6 +39,8 @@ export class Device implements BaseDevice {
         this.condition = 8 + Math.ceil(device.rating/2)
         this.base_condition = 8 + Math.ceil(device.rating/2)
         this.disabled = false
+
+        this.noise_reduction = 0
     }
 
     swapAttributes(att1: string, att2: string) {
@@ -87,7 +93,14 @@ export class Device implements BaseDevice {
         if (this.condition > this.base_condition) {
             this.condition = this.base_condition
         }
+    }
 
+    updateNoiseReduction(value: number) {
+        this.noise_reduction += value
+
+        if (this.noise_reduction > 0) {
+            this.noise_reduction = 0
+        }
     }
 
 }

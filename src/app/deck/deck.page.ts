@@ -24,6 +24,8 @@ export class DeckPage {
   current_program: number = 0
   attributes_list: string[] = ["attack", "sleaze", "firewall", "DProc"]
 
+  noise: number = 0
+
   language: string
 
   constructor(
@@ -33,6 +35,7 @@ export class DeckPage {
     ) {
     this.deckService.changeBaseDevice(new Device(Devices.deck[0]))
     this.deckService.displayed_device.subscribe(data => this.device = data)
+    this.deckService.displayed_noise.subscribe(data => this.noise = data)
 
     this.data = this.getData()
 
@@ -62,6 +65,14 @@ export class DeckPage {
 
   increaseCondition() {
     this.deckService.updateCondition(1)
+  }
+
+  decreaseNoise() {
+    this.deckService.updateNoise(-1)
+  }
+
+  increaseNoise() {
+    this.deckService.updateNoise(1)
   }
 
   changeDevice(event: Event) {

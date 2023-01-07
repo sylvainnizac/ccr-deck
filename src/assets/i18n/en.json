@@ -15,6 +15,7 @@
     "MARK": "mark",
     "MAX_PROGRAM_DESC": "Maximum number of active programs: {{ number }} programmes",
     "NAME": "name",
+    "NOISE": "noise",
     "NOISE_REDUCTION": "noise reduction",
     "N_RED": "N.Red",
     "PAGE": "page",

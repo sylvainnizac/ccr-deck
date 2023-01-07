@@ -37,6 +37,7 @@
             <ion-item>
               <ion-grid class="attributes">
                 <ion-row>
+                  <ion-col class="attributename">{{ "NOISE" | translate }} ({{ device.noise_reduction }})</ion-col>
                   <ion-col class="attributename">{{ "ATTACK" | translate }}</ion-col>
                   <ion-col class="attributename">{{ "SLEAZE" | translate }}</ion-col>
                   <ion-col class="attributename">{{ "FIREWALL" | translate }}</ion-col>
@@ -44,6 +45,13 @@
                   <ion-col class="attributename">{{ "CONDITION" | translate }}</ion-col>
                 </ion-row>
                 <ion-row cdkDropList cdkDropListOrientation="horizontal" (cdkDropListDropped)="drop($event)">
+                  <ion-col class="attributebox">
+                    <ion-col size="9" class="subattributbox">{{noise}}</ion-col>
+                    <ion-col size="3" class="variationbox">
+                      <ion-row><ion-icon (click)="increaseNoise()" name="add-circle"></ion-icon></ion-row>
+                      <ion-row><ion-icon (click)="decreaseNoise()" name="remove-circle"></ion-icon></ion-row>
+                    </ion-col>
+                  </ion-col>
                   <ion-col class="attributebox" cdkDrag><div class="attribute-custom-placeholder" *cdkDragPlaceholder></div>{{device.attack}}</ion-col>
                   <ion-col class="attributebox" cdkDrag><div class="attribute-custom-placeholder" *cdkDragPlaceholder></div>{{device.sleaze}}</ion-col>
                   <ion-col class="attributebox" cdkDrag><div class="attribute-custom-placeholder" *cdkDragPlaceholder></div>{{device.firewall}}</ion-col>
