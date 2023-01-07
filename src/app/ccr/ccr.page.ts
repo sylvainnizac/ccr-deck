@@ -36,9 +36,9 @@ export class CcrPage {
 
     this.data = this.getData()
 
-    this.programService.setMaxProgram(this.device.rating)
-    this.programService.max_program.subscribe(data => this.max_program = data)
-    this.programService.current_program.subscribe(data => this.current_program = data)
+    this.programService.setMaxProgramCcr(this.device.rating)
+    this.programService.max_program_ccr.subscribe(data => this.max_program = data)
+    this.programService.current_program_ccr.subscribe(data => this.current_program = data)
 
     for (let appareil of Devices.ccr){
       this.all_devices.push(new Device(appareil))
@@ -61,7 +61,7 @@ export class CcrPage {
   }
 
   changeDevice(event: Event) {
-    this.programService.setMaxProgram(this.device.rating)
+    this.programService.setMaxProgramCcr(this.device.rating)
   }
 
   compareWith(o1: any, o2: any) {

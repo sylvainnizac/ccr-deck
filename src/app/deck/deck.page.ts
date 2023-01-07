@@ -31,14 +31,14 @@ export class DeckPage {
     private programService: ProgramsService,
     private translateConfigService: TranslateConfigService
     ) {
-    this.deckService.changeBaseDevice(new Device(Devices.temporary[0]))
+    this.deckService.changeBaseDevice(new Device(Devices.deck[0]))
     this.deckService.displayed_device.subscribe(data => this.device = data)
 
     this.data = this.getData()
 
-    this.programService.setMaxProgram(this.device.rating)
-    this.programService.max_program.subscribe(data => this.max_program = data)
-    this.programService.current_program.subscribe(data => this.current_program = data)
+    this.programService.setMaxProgramDeck(this.device.rating)
+    this.programService.max_program_deck.subscribe(data => this.max_program = data)
+    this.programService.current_program_deck.subscribe(data => this.current_program = data)
 
     for (let appareil of Devices.deck){
       this.all_devices.push(new Device(appareil))
@@ -65,7 +65,7 @@ export class DeckPage {
   }
 
   changeDevice(event: Event) {
-    this.programService.setMaxProgram(this.device.rating)
+    this.programService.setMaxProgramDeck(this.device.rating)
   }
 
   compareWith(o1: any, o2: any) {

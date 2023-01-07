@@ -6,17 +6,25 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class ProgramsService {
 
-  max_program = new BehaviorSubject(0)
-  current_program = new BehaviorSubject(0)
-
+  max_program_ccr = new BehaviorSubject(0)
+  current_program_ccr = new BehaviorSubject(0)
+  max_program_deck = new BehaviorSubject(0)
+  current_program_deck = new BehaviorSubject(0)
   constructor() { }
 
-  setMaxProgram(value: number) {
-    this.max_program.next(value)
+  setMaxProgramCcr(value: number) {
+    this.max_program_ccr.next(value)
   }
 
-  setCurrentProgram(value: number) {
-    this.current_program.next(value)
+  setCurrentProgramCcr(value: number) {
+    this.current_program_ccr.next(value)
   }
 
+  setMaxProgramDeck(value: number) {
+    this.max_program_deck.next(value)
+  }
+
+  setCurrentProgramDeck(value: number) {
+    this.current_program_deck.next(value)
+  }
 }
