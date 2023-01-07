@@ -21,8 +21,6 @@ export class Device implements BaseDevice {
     base_condition: number
     disabled: boolean
 
-    base_noise: number
-    noise: number
     noise_reduction: number
 
     constructor (
