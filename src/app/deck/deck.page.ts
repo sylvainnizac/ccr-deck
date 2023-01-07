@@ -31,7 +31,7 @@ export class DeckPage {
     private programService: ProgramsService,
     private translateConfigService: TranslateConfigService
     ) {
-    this.deckService.changeBaseDevice(new Device(Devices.deck[0]))
+    this.deckService.changeBaseDevice(new Device(Devices.temporary[0]))
     this.deckService.displayed_device.subscribe(data => this.device = data)
 
     this.data = this.getData()
