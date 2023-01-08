@@ -37,19 +37,13 @@
             <ion-item>
               <ion-grid class="attributes">
                 <ion-row>
-                  <ion-col class="attributename">{{ "NOISE" | translate }} ({{ device.noise_reduction }})</ion-col>
+                  <ion-col class="attributename">{{ "NOISE_RED" | translate }}</ion-col>
                   <ion-col class="attributename">{{ "FIREWALL" | translate }}</ion-col>
                   <ion-col class="attributename">{{ "D_PROC" | translate }}</ion-col>
                   <ion-col class="attributename">{{ "CONDITION" | translate }}</ion-col>
                 </ion-row>
                 <ion-row >
-                  <ion-col class="attributebox">
-                    <ion-col size="9" class="subattributbox">{{noise}}</ion-col>
-                    <ion-col size="3" class="variationbox">
-                      <ion-row><ion-icon (click)="increaseNoise()" name="add-circle"></ion-icon></ion-row>
-                      <ion-row><ion-icon (click)="decreaseNoise()" name="remove-circle"></ion-icon></ion-row>
-                    </ion-col>
-                  </ion-col>
+                  <ion-col class="attributebox">{{device.noise_reduction}}</ion-col>
                   <ion-col class="attributebox">{{device.firewall}}</ion-col>
                   <ion-col class="attributebox">{{device.DProc}}</ion-col>
                   <ion-col class="attributebox">
@@ -65,6 +59,7 @@
           </ion-list>
         </ion-row>
         <ion-row class="informationrow">{{ "D_PROC" | translate }} <ion-icon name="arrow-forward-outline"></ion-icon> {{ "DATA_PROCESS" | translate }}</ion-row>
+        <ion-row class="informationrow">{{ "NOISE_RED" | translate }} <ion-icon name="arrow-forward-outline"></ion-icon> {{ "NOISE_REDUCTION" | translate }}</ion-row>
         <ion-row>
           <ion-list class="width_100">
             <app-display-actions [categories]="data.categories"></app-display-actions>

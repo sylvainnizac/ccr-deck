@@ -22,6 +22,7 @@ export class Device implements BaseDevice {
     disabled: boolean
 
     noise_reduction: number
+    detailed_noise_reduction: { [name: string]: number } = {};
 
     constructor (
         public device: BaseDevice
@@ -93,11 +94,16 @@ export class Device implements BaseDevice {
         }
     }
 
-    updateNoiseReduction(value: number) {
-        this.noise_reduction += value
+    updateNoiseReduction(key: string, value: number) {
+        this.detailed_noise_reduction[key] += value
 
-        if (this.noise_reduction > 0) {
-            this.noise_reduction = 0
+        if (this.detailed_noise_reduction[key] > 0) {
+            this.detailed_noise_reduction[key] = 0
+        }
+
+        this.noise_reduction = 0
+        for (let k in this.detailed_noise_reduction) {
+            this.noise_reduction += this.detailed_noise_reduction[key]
         }
     }
 

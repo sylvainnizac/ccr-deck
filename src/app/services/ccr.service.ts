@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Device } from '../interfaces/devices';
 import Devices from '../../assets/json/devices.json';
-import { NoiseService } from './noise.service';
 
 @Injectable({
   providedIn: 'root'
@@ -18,13 +17,8 @@ export class CcrService {
   firewallmod: number = 0
   DProcmod: number = 0
 
-  displayed_noise = new BehaviorSubject(0)
-
-  constructor(
-    private noiseService: NoiseService
-  ) {
+  constructor() {
     this.current_device = this.device
-    this.noiseService.ambiant_noise.subscribe(data => this.setDisplayedNoise(data + this.device.noise_reduction))
     this.applyMods()
   }
 
@@ -61,17 +55,4 @@ export class CcrService {
     this.current_device.updateCondition(value)
     this.applyMods()
   }
-
-  updateNoiseReduction(value: number) {
-    this.current_device.updateNoiseReduction(value)
-  }
-
-  updateNoise(value: number) {
-    this.noiseService.updateBaseNoise(value)
-  }
-
-  private setDisplayedNoise(value: number) {
-    this.displayed_noise.next(value)
-  }
-
 }

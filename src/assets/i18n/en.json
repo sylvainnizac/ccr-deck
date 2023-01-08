@@ -17,6 +17,7 @@
     "NAME": "name",
     "NOISE": "noise",
     "NOISE_REDUCTION": "noise reduction",
+    "NOISE_RED": "NR",
     "N_RED": "N.Red",
     "PAGE": "page",
     "PROGRAM": "program",
