@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 import { Program } from '../interfaces/program';
+import { CcrService } from '../services/ccr.service';
 import { ProgramsService } from '../services/programs.service';
 import { TranslateConfigService } from '../services/translate-config.service';
 
@@ -38,24 +39,25 @@ export class DisplayProgramsComponent implements OnInit {
     this.language = this.translateConfigService.getCurrentLang()
   }
 
-  setActive(e: any) {
-    console.log(this.page)
+  setActive(e: any, updater: string) {
     if (this.page == "deck") {
-      this.setActiveProgramDeck(e)
+      this.setActiveProgramDeck(e, updater)
     } else if (this.page == "ccr") {
-      this.setActiveProgramCcr(e)
+      this.setActiveProgramCcr(e, updater)
     }
   }
 
-  setActiveProgramCcr(e: any) {
+  setActiveProgramCcr(e: any, updater: string) {
     if (e.detail.checked && this.current_program < this.max_program){
       this.programService.setCurrentProgramCcr(this.current_program +=1)
+      this.programService.applyProgramEffect(updater, 1)
     } else if (!e.detail.checked) {
       this.programService.setCurrentProgramCcr(this.current_program -=1)
+      this.programService.applyProgramEffect(updater, -1)
     }
   }
 
-  setActiveProgramDeck(e: any) {
+  setActiveProgramDeck(e: any, updater: string) {
     if (e.detail.checked && this.current_program < this.max_program){
       this.programService.setCurrentProgramDeck(this.current_program +=1)
     } else if (!e.detail.checked) {

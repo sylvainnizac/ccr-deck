@@ -4,4 +4,5 @@ export type Program = {
     name: string;
     page: number;
     description: string;
+    updater: string
 }
