@@ -17,6 +17,11 @@ export class CcrService {
   firewallmod: number = 0
   DProcmod: number = 0
 
+  programs_effects: { [name: string]: (value: number, local_this: any)=>void } = {
+    "Toolbox": this.Toolbox,
+    "Encryption": this.Encryption
+  };
+
   constructor() {
     this.current_device = this.device
     this.applyMods()
@@ -43,16 +48,37 @@ export class CcrService {
     this.applyMods()
   }
 
-  updateMod(mod_name: string, value: number) {
+  private updateMod(mod_name: string, value: number) {
      if (mod_name == "firewall") {
       this.firewallmod += value
     } else if (mod_name == "DProc") {
       this.DProcmod += value
     }
+
+    this.applyMods()
   }
 
   updateCondition(value: number) {
     this.current_device.updateCondition(value)
     this.applyMods()
   }
+
+  applyProgramEffect(name: string, value: number){
+    if (name != "") {
+      if (this.programs_effects[name]) {
+        return this.programs_effects[name](value, this);
+      }
+    
+      throw new Error(`Method '${name}' is not implemented.`);
+    }
+  }
+
+  private Toolbox(value: number, service_this: any) {
+    service_this.updateMod("DProc", value)
+  }
+
+  private Encryption(value: number, service_this: any) {
+    service_this.updateMod("firewall", value)
+  }
+
 }

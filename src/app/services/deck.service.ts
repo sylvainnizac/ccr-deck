@@ -17,6 +17,13 @@ export class DeckService {
   firewallmod: number = 0
   DProcmod: number = 0
 
+  programs_effects: { [name: string]: (value: number, local_this: any)=>void } = {
+    "Decryption": this.Decryption,
+    "Encryption": this.Encryption,
+    "Stealth": this.Stealth,
+    "Toolbox": this.Toolbox
+  };
+
   constructor() {
     this.current_device = this.device
     this.applyMods()
@@ -53,10 +60,38 @@ export class DeckService {
     } else if (mod_name == "DProc") {
       this.DProcmod += value
     }
+    this.applyMods()
   }
 
   updateCondition(value: number) {
     this.current_device.updateCondition(value)
     this.applyMods()
   }
+
+  applyProgramEffect(name: string, value: number){
+    if (name != "") {
+      if (this.programs_effects[name]) {
+        return this.programs_effects[name](value, this);
+      }
+    
+      throw new Error(`Method '${name}' is not implemented.`);
+    }
+  }
+
+  private Toolbox(value: number, service_this: any) {
+    service_this.updateMod("DProc", value)
+  }
+
+  private Encryption(value: number, service_this: any) {
+    service_this.updateMod("firewall", value)
+  }
+
+  private Decryption(value: number, service_this: any) {
+    service_this.updateMod("attack", value)
+  }
+
+  private Stealth(value: number, service_this: any) {
+    service_this.updateMod("sleaze", value)
+  }
+
 }

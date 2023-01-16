@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 
 import { Program } from '../interfaces/program';
 import { CcrService } from '../services/ccr.service';
+import { DeckService } from '../services/deck.service';
 import { ProgramsService } from '../services/programs.service';
 import { TranslateConfigService } from '../services/translate-config.service';
 
@@ -32,6 +33,8 @@ export class DisplayProgramsComponent implements OnInit {
   }
 
   constructor(
+    private ccrService: CcrService,
+    private deckService: DeckService,
     private programService: ProgramsService,
     private translateConfigService: TranslateConfigService
     ) {
@@ -50,18 +53,20 @@ export class DisplayProgramsComponent implements OnInit {
   setActiveProgramCcr(e: any, updater: string) {
     if (e.detail.checked && this.current_program < this.max_program){
       this.programService.setCurrentProgramCcr(this.current_program +=1)
-      this.programService.applyProgramEffect(updater, 1)
+      this.ccrService.applyProgramEffect(updater, 1)
     } else if (!e.detail.checked) {
       this.programService.setCurrentProgramCcr(this.current_program -=1)
-      this.programService.applyProgramEffect(updater, -1)
+      this.ccrService.applyProgramEffect(updater, -1)
     }
   }
 
   setActiveProgramDeck(e: any, updater: string) {
     if (e.detail.checked && this.current_program < this.max_program){
       this.programService.setCurrentProgramDeck(this.current_program +=1)
+      this.deckService.applyProgramEffect(updater, 1)
     } else if (!e.detail.checked) {
       this.programService.setCurrentProgramDeck(this.current_program -=1)
+      this.deckService.applyProgramEffect(updater, -1)
     }
   }
 
