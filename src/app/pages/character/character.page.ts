@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ActionSheetController } from '@ionic/angular';
 
 import { environment } from 'src/environments/environment';
-import { TranslateConfigService } from '../services/translate-config.service';
+import { TranslateConfigService } from '../../services/translate-config.service';
 
 
 @Component({

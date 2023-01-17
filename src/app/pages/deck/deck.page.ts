@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
 import { CdkDragDrop } from '@angular/cdk/drag-drop';
 
-import { Device } from '../interfaces/devices';
-import { Data } from '../interfaces/datastruct';
-import { DeckService } from '../services/deck.service';
-import { ProgramsService } from '../services/programs.service';
-import { TranslateConfigService } from '../services/translate-config.service';
-import DeckActions from '../../assets/json/deck_actions.json';
-import DeckPrograms from '../../assets/json/deck_programs.json';
-import Devices from '../../assets/json/devices.json';
+import { Device } from '../../interfaces/devices';
+import { Data } from '../../interfaces/datastruct';
+import { DeckService } from '../../services/deck.service';
+import { TranslateConfigService } from '../../services/translate-config.service';
+import DeckActions from '../../../assets/json/deck_actions.json';
+import DeckPrograms from '../../../assets/json/deck_programs.json';
+import Devices from '../../../assets/json/devices.json';
 
 @Component({
   selector: 'app-deck',
@@ -30,7 +29,6 @@ export class DeckPage {
 
   constructor(
     private deckService: DeckService, 
-    private programService: ProgramsService,
     private translateConfigService: TranslateConfigService
     ) {
     this.deckService.changeBaseDevice(new Device(Devices.deck[0]))
@@ -38,9 +36,9 @@ export class DeckPage {
 
     this.data = this.getData()
 
-    this.programService.setMaxProgramDeck(this.device.rating)
-    this.programService.max_program_deck.subscribe(data => this.max_program = data)
-    this.programService.current_program_deck.subscribe(data => this.current_program = data)
+    this.deckService.setMaxProgram(this.device.rating)
+    this.deckService.max_program.subscribe(data => this.max_program = data)
+    this.deckService.current_program.subscribe(data => this.current_program = data)
 
     for (let appareil of Devices.deck){
       this.all_devices.push(new Device(appareil))
@@ -67,7 +65,7 @@ export class DeckPage {
   }
 
   changeDevice(event: Event) {
-    this.programService.setMaxProgramDeck(this.device.rating)
+    this.deckService.setMaxProgram(this.device.rating)
   }
 
   compareWith(o1: any, o2: any) {

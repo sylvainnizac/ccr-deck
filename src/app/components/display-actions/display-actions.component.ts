@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { Category } from '../interfaces/action';
-import { TranslateConfigService } from '../services/translate-config.service';
+import { Category } from '../../interfaces/action';
+import { TranslateConfigService } from '../../services/translate-config.service';
 
 @Component({
   selector: 'app-display-actions',

@@ -7,8 +7,8 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { DeckPageRoutingModule } from './deck-routing.module';
 import { DeckPage } from './deck.page';
-import { DisplayProgramComponentModule } from '../display-programs/display-programs.module';
-import { DisplayActionsComponentModule } from '../display-actions/display-actions.module';
+import { DisplayProgramComponentModule } from '../../components/display-programs/display-programs.module';
+import { DisplayActionsComponentModule } from '../../components/display-actions/display-actions.module';
 
 
 @NgModule({

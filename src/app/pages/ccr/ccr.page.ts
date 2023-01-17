@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 
-import { Device } from '../interfaces/devices';
-import { Data } from '../interfaces/datastruct';
-import { CcrService } from '../services/ccr.service';
-import { ProgramsService } from '../services/programs.service';
-import { TranslateConfigService } from '../services/translate-config.service';
-import CCRActions from '../../assets/json/ccr_actions.json';
-import CCRPrograms from '../../assets/json/ccr_programs.json';
-import Devices from '../../assets/json/devices.json';
+import { Device } from '../../interfaces/devices';
+import { Data } from '../../interfaces/datastruct';
+import { CcrService } from '../../services/ccr.service';
+import { TranslateConfigService } from '../../services/translate-config.service';
+import CCRActions from '../../../assets/json/ccr_actions.json';
+import CCRPrograms from '../../../assets/json/ccr_programs.json';
+import Devices from '../../../assets/json/devices.json';
 
 
 @Component({
@@ -30,7 +29,6 @@ export class CcrPage {
 
   constructor(
     private CcrService: CcrService, 
-    private programService: ProgramsService,
     private translateConfigService: TranslateConfigService
     ) {
     this.CcrService.changeBaseDevice(new Device(Devices.ccr[2]))
@@ -38,9 +36,9 @@ export class CcrPage {
 
     this.data = this.getData()
 
-    this.programService.setMaxProgramCcr(this.device.rating)
-    this.programService.max_program_ccr.subscribe(data => this.max_program = data)
-    this.programService.current_program_ccr.subscribe(data => this.current_program = data)
+    this.CcrService.setMaxProgram(this.device.rating)
+    this.CcrService.max_program.subscribe(data => this.max_program = data)
+    this.CcrService.current_program.subscribe(data => this.current_program = data)
 
     for (let appareil of Devices.ccr){
       this.all_devices.push(new Device(appareil))
@@ -63,7 +61,7 @@ export class CcrPage {
   }
 
   changeDevice(event: Event) {
-    this.programService.setMaxProgramCcr(this.device.rating)
+    this.CcrService.setMaxProgram(this.device.rating)
   }
 
   compareWith(o1: any, o2: any) {
