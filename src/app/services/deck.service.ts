@@ -10,6 +10,7 @@ export class DeckService extends BaseDeviceService{
   programs_effects: { [name: string]: (value: number, local_this: any)=>void } = {
     "Decryption": this.Decryption,
     "Encryption": this.Encryption,
+    "SignalScrub": this.SignalScrub,
     "Stealth": this.Stealth,
     "Toolbox": this.Toolbox,
     "VirtualMachine": this.VirtualMachine,

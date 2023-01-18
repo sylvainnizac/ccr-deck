@@ -108,7 +108,12 @@ export class Device implements BaseDevice {
     }
 
     updateNoiseReduction(key: string, value: number) {
-        this.detailed_noise_reduction[key] += value
+        if (this.detailed_noise_reduction[key]) {
+            this.detailed_noise_reduction[key] += value
+        } else {
+            this.detailed_noise_reduction[key] = value
+        }
+        
 
         if (this.detailed_noise_reduction[key] > 0) {
             this.detailed_noise_reduction[key] = 0

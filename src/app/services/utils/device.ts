@@ -70,4 +70,9 @@ export class BaseDeviceService {
             service_this.vm_warning.next(false)
         }
     }
+
+    SignalScrub(value: number, service_this: any) {
+      service_this.current_device.updateNoiseReduction("SignalScrub", value)
+    }
+    
 }
