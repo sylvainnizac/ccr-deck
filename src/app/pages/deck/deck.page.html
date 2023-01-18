@@ -38,10 +38,10 @@
               <ion-grid class="attributes">
                 <ion-row>
                   <ion-col class="attributename">{{ "NOISE_RED" | translate }}</ion-col>
-                  <ion-col class="attributename">{{ "ATTACK" | translate }}</ion-col>
-                  <ion-col class="attributename">{{ "SLEAZE" | translate }}</ion-col>
-                  <ion-col class="attributename">{{ "FIREWALL" | translate }}</ion-col>
-                  <ion-col class="attributename">{{ "D_PROC" | translate }}</ion-col>
+                  <ion-col class="attributename">{{ "ATTACK" | translate }} ({{ device.base_attack }})</ion-col>
+                  <ion-col class="attributename">{{ "SLEAZE" | translate }} ({{ device.base_sleaze }})</ion-col>
+                  <ion-col class="attributename">{{ "FIREWALL" | translate }} ({{ device.base_firewall }})</ion-col>
+                  <ion-col class="attributename">{{ "D_PROC" | translate }} ({{ device.base_DProc }})</ion-col>
                   <ion-col class="attributename">{{ "CONDITION" | translate }}</ion-col>
                 </ion-row>
                 <ion-row cdkDropList cdkDropListOrientation="horizontal" (cdkDropListDropped)="drop($event)">
