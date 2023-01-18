@@ -5,4 +5,5 @@ export type Program = {
     page: number;
     description: string;
     updater: string
+    update_value: number
 }

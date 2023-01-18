@@ -23,5 +23,6 @@
     "PROGRAM": "programme",
     "SLEAZE": "corruption",
     "TEST": "test",
-    "TYPE": "type"
+    "TYPE": "type",
+    "VM_WARNING": "1 point de dommage matriciel ne peut être résisté"
 }

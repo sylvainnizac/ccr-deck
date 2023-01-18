@@ -9,7 +9,8 @@ export class CcrService extends BaseDeviceService{
 
   programs_effects: { [name: string]: (value: number, local_this: any)=>void } = {
     "Toolbox": this.Toolbox,
-    "Encryption": this.Encryption
+    "Encryption": this.Encryption,
+    "VirtualMachine": this.VirtualMachine,
   };
 
   constructor() {

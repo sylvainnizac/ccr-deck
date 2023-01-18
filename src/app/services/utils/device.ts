@@ -9,6 +9,7 @@ export class BaseDeviceService {
     displayed_device = new BehaviorSubject(new Device(Devices.temporary[0]))  
     max_program = new BehaviorSubject(0)
     current_program = new BehaviorSubject(0)
+    vm_warning = new BehaviorSubject(false)
 
     attackmod: number = 0
     sleazemod: number = 0
@@ -55,5 +56,18 @@ export class BaseDeviceService {
   
     setCurrentProgram(value: number) {
       this.current_program.next(value)
+    }
+
+    VirtualMachine(value: number, service_this: any) {
+        const new_max_program = service_this.max_program.value + value
+        if (new_max_program >= service_this.current_program.value) {
+            service_this.max_program.next(new_max_program)
+        }
+
+        if (value > 0) {
+            service_this.vm_warning.next(true)
+        } else {
+            service_this.vm_warning.next(false)
+        }
     }
 }

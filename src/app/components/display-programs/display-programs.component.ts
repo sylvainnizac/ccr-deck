@@ -40,31 +40,31 @@ export class DisplayProgramsComponent implements OnInit {
     this.language = this.translateConfigService.getCurrentLang()
   }
 
-  setActive(e: any, updater: string) {
+  setActive(e: any, updater: string, value: number) {
     if (this.page == "deck") {
-      this.setActiveProgramDeck(e, updater)
+      this.setActiveProgramDeck(e, updater, value)
     } else if (this.page == "ccr") {
-      this.setActiveProgramCcr(e, updater)
+      this.setActiveProgramCcr(e, updater, value)
     }
   }
 
-  setActiveProgramCcr(e: any, updater: string) {
+  setActiveProgramCcr(e: any, updater: string, value: number) {
     if (e.detail.checked && this.current_program < this.max_program){
       this.ccrService.setCurrentProgram(this.current_program +=1)
-      this.ccrService.applyProgramEffect(updater, 1)
+      this.ccrService.applyProgramEffect(updater, value)
     } else if (!e.detail.checked) {
       this.ccrService.setCurrentProgram(this.current_program -=1)
-      this.ccrService.applyProgramEffect(updater, -1)
+      this.ccrService.applyProgramEffect(updater, -value)
     }
   }
 
-  setActiveProgramDeck(e: any, updater: string) {
+  setActiveProgramDeck(e: any, updater: string, value: number) {
     if (e.detail.checked && this.current_program < this.max_program){
       this.deckService.setCurrentProgram(this.current_program +=1)
-      this.deckService.applyProgramEffect(updater, 1)
+      this.deckService.applyProgramEffect(updater, value)
     } else if (!e.detail.checked) {
       this.deckService.setCurrentProgram(this.current_program -=1)
-      this.deckService.applyProgramEffect(updater, -1)
+      this.deckService.applyProgramEffect(updater, -value)
     }
   }
 

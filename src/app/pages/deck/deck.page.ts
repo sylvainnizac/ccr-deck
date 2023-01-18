@@ -27,6 +27,8 @@ export class DeckPage {
 
   language: string
 
+  vm_warning: boolean = false
+
   constructor(
     private deckService: DeckService, 
     private translateConfigService: TranslateConfigService
@@ -39,6 +41,8 @@ export class DeckPage {
     this.deckService.setMaxProgram(this.device.rating)
     this.deckService.max_program.subscribe(data => this.max_program = data)
     this.deckService.current_program.subscribe(data => this.current_program = data)
+
+    this.deckService.vm_warning.subscribe(data => this.vm_warning = data)
 
     for (let appareil of Devices.deck){
       this.all_devices.push(new Device(appareil))

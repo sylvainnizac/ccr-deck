@@ -11,7 +11,8 @@ export class DeckService extends BaseDeviceService{
     "Decryption": this.Decryption,
     "Encryption": this.Encryption,
     "Stealth": this.Stealth,
-    "Toolbox": this.Toolbox
+    "Toolbox": this.Toolbox,
+    "VirtualMachine": this.VirtualMachine,
   };
 
   constructor() {

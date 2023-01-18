@@ -25,6 +25,8 @@ export class CcrPage {
 
   noise: number = 0
 
+  vm_warning: boolean = false
+
   language: string
 
   constructor(
@@ -39,6 +41,8 @@ export class CcrPage {
     this.CcrService.setMaxProgram(this.device.rating)
     this.CcrService.max_program.subscribe(data => this.max_program = data)
     this.CcrService.current_program.subscribe(data => this.current_program = data)
+
+    this.CcrService.vm_warning.subscribe(data => this.vm_warning = data)
 
     for (let appareil of Devices.ccr){
       this.all_devices.push(new Device(appareil))
