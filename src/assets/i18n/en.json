@@ -24,5 +24,6 @@
     "PROGRAM": "program",
     "SLEAZE": "sleaze",
     "TEST": "test",
-    "TYPE": "type"
+    "TYPE": "type",
+    "VM_WARNING": "1 matrix damage cannot be resisted"
 }

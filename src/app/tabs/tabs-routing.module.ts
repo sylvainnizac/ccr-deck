@@ -9,15 +9,15 @@ const routes: Routes = [
     children: [
       {
         path: 'deck',
-        loadChildren: () => import('../deck/deck.module').then(m => m.DeckPageModule)
+        loadChildren: () => import('../pages/deck/deck.module').then(m => m.DeckPageModule)
       },
       {
         path: 'ccr',
-        loadChildren: () => import('../ccr/ccr.module').then(m => m.CcrPageModule)
+        loadChildren: () => import('../pages/ccr/ccr.module').then(m => m.CcrPageModule)
       },
       {
         path: 'character',
-        loadChildren: () => import('../character/character.module').then(m => m.CharacterPageModule)
+        loadChildren: () => import('../pages/character/character.module').then(m => m.CharacterPageModule)
       },
       {
         path: '',

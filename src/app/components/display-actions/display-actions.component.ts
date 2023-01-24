@@ -1,9 +1,10 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { IonModal } from '@ionic/angular';
 
-import { Category } from '../interfaces/action';
-import { TranslateConfigService } from '../services/translate-config.service';
-import DefaultEnum from '../../assets/json/default_enumerations.json';
+
+import DefaultEnum from '../../../assets/json/default_enumerations.json';
+import { Category } from '../../interfaces/action';
+import { TranslateConfigService } from '../../services/translate-config.service';
 
 @Component({
   selector: 'app-display-actions',

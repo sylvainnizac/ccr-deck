@@ -1,16 +1,16 @@
 {
   "common_programs": [
-    {"active": false, "installed": false, "name": "Cryptage", "page": 246, "description": "Firewall + 1", "updater": "Encryption"},
-    {"active": false, "installed": false, "name": "Gommage de bruit", "page": 247, "description": "Bruit -2", "updater": "SignalScrub"},
-    {"active": false, "installed": false, "name": "Machine virtuelle", "page": 247, "description": "+2 softs actifs, +1 dommage non résisté", "updater": "VirtualMachine"},
-    {"active": false, "installed": false, "name": "Toolbox", "page": 246, "description": "TdD + 1", "updater": "Toolbox"}
+    {"active": false, "installed": false, "name": "Cryptage", "page": 246, "description": "Firewall + 1", "updater": "Encryption", "update_value": 1},
+    {"active": false, "installed": false, "name": "Gommage de bruit", "page": 247, "description": "Bruit -2", "updater": "SignalScrub", "update_value": -2},
+    {"active": false, "installed": false, "name": "Machine virtuelle", "page": 247, "description": "+2 programmes maximum, +1 dommage non résisté", "updater": "VirtualMachine", "update_value": 2},
+    {"active": false, "installed": false, "name": "Toolbox", "page": 246, "description": "TdD + 1", "updater": "Toolbox", "update_value": 1}
   ],  
   "hacking_programs": [
-    {"active": false, "installed": false, "name": "Armure", "page": 247, "description": "+2d pour résister aux dommage matriciels", "updater": "Armor"},
-    {"active": false, "installed": false, "name": "Carapace", "page": 247, "description": "+1d pour résister aux dommage matriciels et biofeedback", "updater": "Shell"},
-    {"active": false, "installed": false, "name": "Filtre de Biofeedback", "page": 247, "description": "+2d pour résister aux dommage biofeedback", "updater": "BiofeedbackFilter"},
-    {"active": false, "installed": false, "name": "Discrétion", "page": 247, "description": "+2d contre \"traquer une icône\"", "updater": "Sneak"},
-    {"active": false, "installed": false, "name": "Garde", "page": 247, "description": "réduit les dommages supplémentaires des marks, -1 par dommage mark", "updater": "Guard"},
-    {"active": false, "installed": false, "name": "Maquillage", "page": 247, "description": "modifie une icône pour cacher sa vraie nature", "updater": "Wrapper"}
+    {"active": false, "installed": false, "name": "Armure", "page": 247, "description": "+2d pour résister aux dommage matriciels", "updater": "Armor", "update_value": 0},
+    {"active": false, "installed": false, "name": "Carapace", "page": 247, "description": "+1d pour résister aux dommage matriciels et biofeedback", "updater": "Shell", "update_value": 0},
+    {"active": false, "installed": false, "name": "Filtre de Biofeedback", "page": 247, "description": "+2d pour résister aux dommage biofeedback", "updater": "BiofeedbackFilter", "update_value": 0},
+    {"active": false, "installed": false, "name": "Discrétion", "page": 247, "description": "+2d contre \"traquer une icône\"", "updater": "Sneak", "update_value": 0},
+    {"active": false, "installed": false, "name": "Garde", "page": 247, "description": "réduit les dommages supplémentaires des marks, -1 par dommage mark", "updater": "Guard", "update_value": 0},
+    {"active": false, "installed": false, "name": "Maquillage", "page": 247, "description": "modifie une icône pour cacher sa vraie nature", "updater": "Wrapper", "update_value": 0}
   ]
 }

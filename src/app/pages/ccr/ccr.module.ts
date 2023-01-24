@@ -5,8 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { CcrPage } from './ccr.page';
-import { DisplayProgramComponentModule } from '../display-programs/display-programs.module';
-import { DisplayActionsComponentModule } from '../display-actions/display-actions.module';
+import { DisplayProgramComponentModule } from '../../components/display-programs/display-programs.module';
+import { DisplayActionsComponentModule } from '../../components/display-actions/display-actions.module';
 import { CcrPageRoutingModule } from './ccr-routing.module';
 
 @NgModule({
