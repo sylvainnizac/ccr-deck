@@ -1,0 +1,8 @@
+{
+    "device_attributes":[
+        {"id": 0, "value": "ATTACK"},
+        {"id": 1, "value": "D_PROC"},
+        {"id": 2, "value": "FIREWALL"},
+        {"id": 3, "value": "SLEAZE"}
+    ]
+}

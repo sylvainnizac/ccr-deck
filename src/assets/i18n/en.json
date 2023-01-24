@@ -3,6 +3,7 @@
     "APP_VERSION": "app version",
     "ATTACK": "attack",
     "CHARACTER": "character",
+    "CLOSE": "close",
     "CONDITION": "condition",
     "CURRENT_PROGRAM_DESC": "There is currently {{ number }} active programs",
     "D_PROC": "D.Proc",

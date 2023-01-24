@@ -5,6 +5,7 @@ export type Action = {
     limit: string;
     type: string;
     page: number;
+    details: string;
   }
   
 export type Category = {

@@ -3,6 +3,7 @@
     "APP_VERSION": "version de l'application",
     "ATTACK": "attaque",
     "CHARACTER": "personnage",
+    "CLOSE": "fermer",
     "CONDITION": "condition",
     "CURRENT_PROGRAM_DESC": "Il y a actuellement {{ number }} programmes actifs",
     "D_PROC": "TdD",

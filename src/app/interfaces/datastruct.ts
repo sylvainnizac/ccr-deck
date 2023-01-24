@@ -12,3 +12,9 @@ export class Data implements DataStruct {
     constructor (public categories?: Category[], public programs?: Program[], public hacking_programs?: Program[]) {
     }
 }
+
+export interface Enumeration {
+  id: number
+  value: string
+}
+
