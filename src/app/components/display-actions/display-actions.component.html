@@ -16,35 +16,12 @@
         <ion-item>
           <ion-grid>
             <ion-row *ngFor="let action of category.actions; index as i, odd as isOdd; even as isEven" [class.Odd]="isOdd" [class.Even]="isEven" class="item-accordion">
-              <ion-col size="2" id="{{action.name}}-modal">{{action.name}}</ion-col>
+              <ion-col size="2" (click)="openModal(action)">{{action.name}}</ion-col>
               <ion-col size="1">{{action.mark}}</ion-col>
               <ion-col size="4">{{action.test}}</ion-col>
               <ion-col size="2">{{ action.limit | translate }}</ion-col>
               <ion-col size="2">{{action.type}}</ion-col>
               <ion-col size="1">{{action.page}}</ion-col>
-              <ion-modal trigger="{{action.name}}-modal">
-                <ng-template>
-                  <ion-header>
-                    <ion-toolbar>
-                      <ion-title>{{action.name}}</ion-title>
-                      <ion-buttons slot="end">
-                        <ion-button (click)="close()" [strong]="true">{{ "CLOSE" | translate }}</ion-button>
-                      </ion-buttons>
-                    </ion-toolbar>
-                  </ion-header>
-                  <ion-content class="ion-padding">
-                    <ion-item>
-                      <ion-label position="stacked">{{ action.details }}</ion-label>
-                    </ion-item>
-                    <ion-item>
-                      <ion-label position="stacked">{{action.test}}</ion-label>
-                      <ion-label position="stacked">{{action.limit}}</ion-label>
-                      <ion-label position="stacked">{{action.type}}</ion-label>
-                      <ion-label position="stacked">{{action.mark}}</ion-label>
-                    </ion-item>
-                  </ion-content>
-                </ng-template>
-              </ion-modal>
             </ion-row>
           </ion-grid>
         </ion-item>

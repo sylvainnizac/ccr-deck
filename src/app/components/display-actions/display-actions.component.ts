@@ -1,10 +1,9 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
-import { IonModal } from '@ionic/angular';
+import { IonModal, ModalController } from '@ionic/angular';
 
-
-import DefaultEnum from '../../../assets/json/default_enumerations.json';
-import { Category } from '../../interfaces/action';
+import { Action, Category } from '../../interfaces/action';
 import { TranslateConfigService } from '../../services/translate-config.service';
+import { DetailsModalComponent } from '../details-modal/details-modal.component';
 
 @Component({
   selector: 'app-display-actions',
@@ -20,14 +19,8 @@ export class DisplayActionsComponent implements OnInit {
 
   language: string
 
-  device_attributes: [
-    {"id": 0, "value": "ATTACK"},
-    {"id": 1, "value": "D_PROC"},
-    {"id": 2, "value": "FIREWALL"},
-    {"id": 3, "value": "SLEAZE"}
-  ]
-
   constructor(
+    private modalCtrl: ModalController,
     private translateConfigService: TranslateConfigService
   ) {
     this.translateConfigService.getDefaultLanguage()
@@ -36,8 +29,16 @@ export class DisplayActionsComponent implements OnInit {
 
   ngOnInit() {}
 
-  close() {
-    this.modal.dismiss(null, "cancel");
+  async openModal(action: Action) {
+    const modal = await this.modalCtrl.create({
+      component: DetailsModalComponent,
+      componentProps: {
+        "action": action
+      }
+    });
+    modal.present();
+
+    const { data, role } = await modal.onWillDismiss();
   }
 
 }
