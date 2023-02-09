@@ -8,12 +8,26 @@
 </ion-header>
 <ion-content class="ion-padding">
   <ion-item>
-    <ion-label position="stacked">{{ action.details }}</ion-label>
+    <p>{{ action.details }}</p>
   </ion-item>
   <ion-item>
-    <ion-label position="stacked">{{action.test}}</ion-label>
-    <ion-label position="stacked">{{action.limit}}</ion-label>
-    <ion-label position="stacked">{{action.type}}</ion-label>
-    <ion-label position="stacked">{{action.mark}}</ion-label>
+    <ion-grid>
+      <ion-row class="Even">
+        <ion-col size="5">{{ "TEST_DESC" | translate }}</ion-col>
+        <ion-col size="7">{{action.test}}</ion-col>
+      </ion-row>
+      <ion-row class="Odd">
+        <ion-col size="5">{{ "LIMIT_TO_APPLY" | translate }}</ion-col>
+        <ion-col size="7">{{action.limit}}</ion-col>
+      </ion-row>
+      <ion-row class="Even">
+        <ion-col size="5">{{ "ACTION_TYPE" | translate }}</ion-col>
+        <ion-col size="7">{{action.type}}</ion-col>
+      </ion-row>
+      <ion-row class="Odd">
+        <ion-col size="5">{{ "NBR_REQ_MARKS" | translate }}</ion-col>
+        <ion-col size="7">{{action.mark}}</ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-item>
 </ion-content>

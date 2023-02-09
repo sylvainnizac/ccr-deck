@@ -1,4 +1,5 @@
 {
+    "ACTION_TYPE": "action type",
     "ACTIVE": "active",
     "APP_VERSION": "app version",
     "ATTACK": "attack",
@@ -12,10 +13,12 @@
     "DESCRIPTION": "description",
     "FIREWALL": "firewall",
     "LIMIT": "limit",
+    "LIMIT_TO_APPLY": "limit to apply",
     "LOADED": "loaded",
     "MARK": "mark",
     "MAX_PROGRAM_DESC": "Maximum number of active programs: {{ number }} programmes",
     "NAME": "name",
+    "NBR_REQ_MARKS": "number of mark required",
     "NOISE": "noise",
     "NOISE_REDUCTION": "noise reduction",
     "NOISE_RED": "NR",
@@ -24,6 +27,7 @@
     "PROGRAM": "program",
     "SLEAZE": "sleaze",
     "TEST": "test",
+    "TEST_DESC": "test to perform",
     "TYPE": "type",
     "VM_WARNING": "1 matrix damage cannot be resisted"
 }

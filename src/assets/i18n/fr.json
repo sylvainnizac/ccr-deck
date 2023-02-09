@@ -1,4 +1,5 @@
 {
+    "ACTION_TYPE": "type d'action",
     "ACTIVE": "actif",
     "APP_VERSION": "version de l'application",
     "ATTACK": "attaque",
@@ -12,10 +13,12 @@
     "DESCRIPTION": "description",
     "FIREWALL": "firewall",
     "LIMIT": "limite",
+    "LIMIT_TO_APPLY": "limit à appliquer",
     "LOADED": "chargé",
     "MARK": "mark",
     "MAX_PROGRAM_DESC": "Nombre maximum de programmes pouvant être actif en même temps: {{ number }} programmes",
     "NAME": "nom",
+    "NBR_REQ_MARKS": "nombre de marks nécessaires",
     "NOISE": "bruit",
     "NOISE_REDUCTION": "réduction de bruit",
     "NOISE_RED": "red. bruit",
@@ -24,6 +27,7 @@
     "PROGRAM": "programme",
     "SLEAZE": "corruption",
     "TEST": "test",
+    "TEST_DESC": "test à réaliser",
     "TYPE": "type",
     "VM_WARNING": "1 point de dommage matriciel ne peut être résisté"
 }
