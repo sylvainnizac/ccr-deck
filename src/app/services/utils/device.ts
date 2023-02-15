@@ -22,7 +22,7 @@ export class BaseDeviceService {
 
     changeBaseDevice(new_device: Device) {
         this.device = new_device
-        this.current_device = this.device
+        this.current_device = new_device
         this.applyMods()
     }
 

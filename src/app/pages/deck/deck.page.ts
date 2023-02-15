@@ -70,6 +70,7 @@ export class DeckPage {
 
   changeDevice(event: Event) {
     this.deckService.setMaxProgram(this.device.rating)
+    this.deckService.changeBaseDevice(this.device)
   }
 
   compareWith(o1: any, o2: any) {

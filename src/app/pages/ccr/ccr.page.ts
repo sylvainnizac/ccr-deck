@@ -66,6 +66,7 @@ export class CcrPage {
 
   changeDevice(event: Event) {
     this.CcrService.setMaxProgram(this.device.rating)
+    this.CcrService.changeBaseDevice(this.device)
   }
 
   compareWith(o1: any, o2: any) {
