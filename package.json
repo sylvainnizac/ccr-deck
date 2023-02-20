@@ -43,7 +43,7 @@
     "@angular/cli": "15.1.6",
     "@angular/compiler": "^15.1.4",
     "@angular/compiler-cli": "^15.1.5",
-    "@angular/language-service": "^15.1.4",
+    "@angular/language-service": "^15.1.5",
     "@capacitor/cli": "4.6.3",
     "@ionic/angular-toolkit": "^8.0.0",
     "@ionic/cli": "6.20.8",
