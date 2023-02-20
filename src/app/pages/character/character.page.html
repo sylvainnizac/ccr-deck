@@ -21,6 +21,13 @@
   <ion-grid>
     <ion-col>
       <ion-row>
+        <ion-item>
+          <ion-select placeholder="Select character" (ionChange)="changeCharacter($event)" [(ngModel)]="character" [compareWith]="compareWith">
+            <ion-select-option *ngFor="let c of all_characters" [value]="c.id">{{ c.name }}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-row>
+      <ion-row>
         <ion-label>{{ "APP_VERSION" | translate }}: {{app_version}}</ion-label>
       </ion-row>
     </ion-col>

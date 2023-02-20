@@ -44,8 +44,8 @@ export class CcrPage {
 
     this.CcrService.vm_warning.subscribe(data => this.vm_warning = data)
 
-    for (let appareil of Devices.ccr){
-      this.all_devices.push(new Device(appareil))
+    for (let device of Devices.ccr){
+      this.all_devices.push(new Device(device))
     }
 
     this.translateConfigService.getDefaultLanguage()
