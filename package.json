@@ -42,7 +42,7 @@
     "@angular-eslint/template-parser": "^15.2.1",
     "@angular/cli": "15.2.4",
     "@angular/compiler": "^15.2.4",
-    "@angular/compiler-cli": "^15.2.4",
+    "@angular/compiler-cli": "^15.2.5",
     "@angular/language-service": "^15.2.4",
     "@capacitor/cli": "4.7.1",
     "@ionic/angular-toolkit": "^8.0.0",
