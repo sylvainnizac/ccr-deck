@@ -9,10 +9,10 @@ export class Character implements BaseCharacter {
     name: string;
 
     constructor (
-        public device: BaseCharacter
+        public character: BaseCharacter
         ) {
-            this.id = device.id
-            this.name = device.name
+            this.id = character.id
+            this.name = character.name
     }
 
 
