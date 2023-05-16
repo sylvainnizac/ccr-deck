@@ -1,0 +1,16 @@
+name: Merge branch with labeled dependencies
+on:
+  pull_request:
+    types: ["dependencies"]
+jobs:
+  merge-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@develop
+
+      - name: Merge by labeled - dependencies
+        uses: devmasx/merge-branch@develop
+        with:
+          label_name: 'merged in develop'
+          target_branch: 'develop'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
