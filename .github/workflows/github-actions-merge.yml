@@ -1,4 +1,4 @@
-name: Merge branch with labeled dependencies
+name: Merge branch with label dependencies
 on:
   pull_request:
     types: [dependencies]
@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
 
-      - name: Merge by labeled - dependencies
+      - name: Merge by label - dependencies
         uses: devmasx/merge-branch@master
         with:
           label_name: 'merged in master'
