@@ -6,9 +6,9 @@ It contains many usefull informations for riggers and deckers.
 
 ## Overview
 
-the app is divided in three parts, character selection, deck device and CCR device.
+the app is divided in three tabs, character selection, deck device and CCR device.
 
-## Interfaces
+## Tabs
 
 the CCR and Deck tabs are very similar and build on the same template.
 
@@ -18,11 +18,11 @@ the condition monitor can be updated to reflect in game matrix damages. The moni
 
 - left column, list off all programs that can run on the device. a program needs to be installed before being activated. the number of activated programs at the sametime depends on the device. the checkboxes became disabled when the maximum number of program is reached.
 
-## Deck interface
+### Deck tab
 
 the 4 main attributes (attaque, corruption, firewall, TdD) can be swaped.
 
-## CCR interface
+### CCR tab
 
 nothing special for now
 
